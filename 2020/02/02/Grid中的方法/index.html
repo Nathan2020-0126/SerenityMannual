@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Grid中的方法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="getButtons123456789101112protected getButtons(): Serenity.ToolButton[] &amp;#123;    var buttons &#x3D; super.getButtons();    buttons[Q.indexOf(buttons, x &#x3D;&gt; x.cssClass &#x3D;&#x3D; &quot;add-button&quot;)].title &#x3D; &quot;Insert Sa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Grid中的方法">
+<meta property="og:url" content="https://nathan2020-0126.github.io/SerenityMannual/2020/02/02/Grid%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="getButtons123456789101112protected getButtons(): Serenity.ToolButton[] &amp;#123;    var buttons &#x3D; super.getButtons();    buttons[Q.indexOf(buttons, x &#x3D;&gt; x.cssClass &#x3D;&#x3D; &quot;add-button&quot;)].title &#x3D; &quot;Insert Sa">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-02T02:32:38.049Z">
+<meta property="article:modified_time" content="2020-02-04T05:11:12.296Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/SerenityMannual/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/SerenityMannual/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/SerenityMannual/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/SerenityMannual/">Home</a>
+        
+          <a class="main-nav-link" href="/SerenityMannual/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/SerenityMannual/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://nathan2020-0126.github.io/SerenityMannual"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Grid中的方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/SerenityMannual/2020/02/02/Grid%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/" class="article-date">
+  <time datetime="2020-02-02T02:32:38.049Z" itemprop="datePublished">2020-02-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Grid中的方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="getButtons"><a href="#getButtons" class="headerlink" title="getButtons"></a>getButtons</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> getButtons(): Serenity.ToolButton[] &#123;</span><br><span class="line">    <span class="keyword">var</span> buttons = <span class="keyword">super</span>.getButtons();</span><br><span class="line">    buttons[Q.indexOf(buttons, <span class="function"><span class="params">x</span> =&gt;</span> x.cssClass == <span class="string">"add-button"</span>)].title = <span class="string">"Insert SalesOrder into monthly Plan"</span>;</span><br><span class="line">    buttons.splice(Q.indexOf(buttons, <span class="function"><span class="params">x</span> =&gt;</span> x.cssClass == <span class="string">"add-button"</span>), <span class="number">1</span>);</span><br><span class="line">    buttons.push(&#123;</span><br><span class="line">        title: <span class="string">'Save Changes'</span>,</span><br><span class="line">        cssClass: <span class="string">'apply-changes-button disabled'</span>,</span><br><span class="line">        onClick: <span class="function"><span class="params">e</span> =&gt;</span> <span class="keyword">this</span>.saveClick(),</span><br><span class="line">        separator: <span class="literal">true</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> buttons;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="去除Title"><a href="#去除Title" class="headerlink" title="去除Title"></a>去除Title</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constructor</span>(<span class="params">container: JQuery</span>) &#123;</span><br><span class="line">           <span class="keyword">super</span>(container);</span><br><span class="line">           <span class="keyword">this</span>.setTitle(<span class="string">""</span>);</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="EditItem"><a href="#EditItem" class="headerlink" title="EditItem"></a>EditItem</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">        * This method is called for columns with [EditLink] attribute,</span></span><br><span class="line"><span class="comment">        * but only for edit links of this grid's own item type.</span></span><br><span class="line"><span class="comment">        * It is also called by Add Product button with a NULL entityOrId</span></span><br><span class="line"><span class="comment">        * parameter so we should check that entityOrId is a string</span></span><br><span class="line"><span class="comment">        * to be sure it is originating from a link.</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * As we changed format for other columns, this will only be called</span></span><br><span class="line"><span class="comment">        * for links in remaining OrderID column</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       <span class="keyword">protected</span> editItem(entityOrId) &#123;</span><br><span class="line">           <span class="comment">// check that this is an edit link click, not add button, ID is always a string</span></span><br><span class="line">           <span class="keyword">if</span> (<span class="keyword">typeof</span> entityOrId == <span class="string">"string"</span>) &#123;</span><br><span class="line">               <span class="comment">// convert ID to an integer, and find order with that ID</span></span><br><span class="line">               <span class="keyword">var</span> item = <span class="keyword">this</span>.view.getItemById(Q.toId(entityOrId));</span><br><span class="line">               <span class="comment">// date is a ISO string, so need to parse it first</span></span><br><span class="line">               <span class="keyword">var</span> date = Q.formatDate(item.OrderDate);</span><br><span class="line"></span><br><span class="line">               <span class="comment">// ask for confirmation</span></span><br><span class="line">               Q.confirm(Q.format(<span class="string">"You clicked edit link for order with ID: &#123;0&#125; and Date: &#123;1&#125;. Should i open that order?"</span>,</span><br><span class="line">                   item.OrderID, date), <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                       <span class="keyword">new</span> Northwind.OrderDialog().loadByIdAndOpenDialog(item.OrderID);</span><br><span class="line">                   &#125;);</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">else</span> &#123;</span><br><span class="line">               <span class="keyword">super</span>.editItem(entityOrId);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="onViewSubmit"><a href="#onViewSubmit" class="headerlink" title="onViewSubmit"></a>onViewSubmit</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> onViewSubmit() &#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">super</span>.onViewSubmit()) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> request = <span class="keyword">this</span>.view.params <span class="keyword">as</span> Serenity.ListRequest;</span><br><span class="line">    request.Criteria = Serenity.Criteria.and(request.Criteria,</span><br><span class="line">                [[SalesMilestoneTaskStepRow.Fields.ReponsiblePersonUsername], <span class="string">'='</span>, Q.Authorization.username], [<span class="string">'is null'</span>, [SalesMilestoneTaskStepRow.Fields.ActualEndDate], [<span class="string">'is not null'</span>, [SalesMilestoneTaskStepRow.Fields.ActualStartDate]]);</span><br><span class="line">    request.IncludeColumns.push(<span class="string">"CurrentMilestoneTaskRespPersonUserId"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nathan2020-0126.github.io/SerenityMannual/2020/02/02/Grid%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/" data-id="ck67uk6ae0001kotp09z8gdcu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/SerenityMannual/2020/02/04/React/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          React
+        
+      </div>
+    </a>
+  
+  
+    <a href="/SerenityMannual/2020/02/02/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/SerenityMannual/archives/2020/02/">February 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/SerenityMannual/2020/02/04/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/">图片测试</a>
+          </li>
+        
+          <li>
+            <a href="/SerenityMannual/2020/02/04/Dialog%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/">Dialog中的方法</a>
+          </li>
+        
+          <li>
+            <a href="/SerenityMannual/2020/02/04/React/">React</a>
+          </li>
+        
+          <li>
+            <a href="/SerenityMannual/2020/02/02/Grid%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/">Grid中的方法</a>
+          </li>
+        
+          <li>
+            <a href="/SerenityMannual/2020/02/02/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/SerenityMannual/" class="mobile-nav-link">Home</a>
+  
+    <a href="/SerenityMannual/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/SerenityMannual/fancybox/jquery.fancybox.css">
+
+  
+<script src="/SerenityMannual/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/SerenityMannual/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

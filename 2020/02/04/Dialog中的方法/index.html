@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Dialog中的方法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="构造函数1234567891011121314constructor(container: JQuery) &amp;#123;            super(container);            this.adjustLineGrid &#x3D; new AdjustLineGrid(this.byId(&#39;InventoryAdjustGrid&#39;));            this.adjustL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dialog中的方法">
+<meta property="og:url" content="https://nathan2020-0126.github.io/SerenityMannual/2020/02/04/Dialog%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="构造函数1234567891011121314constructor(container: JQuery) &amp;#123;            super(container);            this.adjustLineGrid &#x3D; new AdjustLineGrid(this.byId(&#39;InventoryAdjustGrid&#39;));            this.adjustL">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-03T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-02-04T05:19:36.701Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/SerenityMannual/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/SerenityMannual/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/SerenityMannual/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/SerenityMannual/">Home</a>
+        
+          <a class="main-nav-link" href="/SerenityMannual/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/SerenityMannual/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://nathan2020-0126.github.io/SerenityMannual"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Dialog中的方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/SerenityMannual/2020/02/04/Dialog%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/" class="article-date">
+  <time datetime="2020-02-03T16:00:00.000Z" itemprop="datePublished">2020-02-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Dialog中的方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a><strong>构造函数</strong></h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constructor</span>(<span class="params">container: JQuery</span>) &#123;</span><br><span class="line">            <span class="keyword">super</span>(container);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">this</span>.adjustLineGrid = <span class="keyword">new</span> AdjustLineGrid(<span class="keyword">this</span>.byId(<span class="string">'InventoryAdjustGrid'</span>));</span><br><span class="line">            <span class="keyword">this</span>.adjustLineGrid.element.flexHeightOnly(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">this</span>.form.InventoryAdjustTypeId.changeSelect2(<span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">this</span>.form.InventoryAdjustTypeId.value == <span class="string">"1"</span>) &#123;</span><br><span class="line">                    $(<span class="string">".s-InventoryAdjustDialog"</span>).find(<span class="string">".field.StockLocationId"</span>).show();</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    $(<span class="string">".s-InventoryAdjustDialog"</span>).find(<span class="string">".field.StockLocationId"</span>).hide();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="LoadEntity"><a href="#LoadEntity" class="headerlink" title="LoadEntity"></a><strong>LoadEntity</strong></h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">loadEntity(entity: InventoryAdjustRow) &#123;</span><br><span class="line">            <span class="keyword">super</span>.loadEntity(entity);</span><br><span class="line">            <span class="keyword">var</span> self = <span class="keyword">this</span>;</span><br><span class="line">            <span class="keyword">if</span> (entity.InventoryAdjustTypeId == <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>.element.find(<span class="string">".field.StockLocationId"</span>).show();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (!self.isNew()) &#123;</span><br><span class="line">                <span class="keyword">if</span> (entity.InventoryStatusId == <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">this</span>.element.find(<span class="string">".tool-button.confirm-button"</span>).removeClass(<span class="string">"hide"</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (!<span class="keyword">this</span>.element.find(<span class="string">".tool-button.confirm-button"</span>).hasClass(<span class="string">"hide"</span>)) &#123;</span><br><span class="line">                        <span class="keyword">this</span>.element.find(<span class="string">".tool-button.confirm-button"</span>).addClass(<span class="string">"hide"</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                    Serenity.EditorUtils.setReadonly(<span class="keyword">this</span>.element.find(<span class="string">'.editor'</span>), <span class="literal">true</span>);</span><br><span class="line">                    </span><br><span class="line">                    self.saveAndCloseButton.hide();</span><br><span class="line">                    self.applyChangesButton.hide();</span><br><span class="line">                &#125;               </span><br><span class="line">                <span class="keyword">if</span> (entity.InventoryStatusId == <span class="number">3</span>) &#123;</span><br><span class="line">                    <span class="keyword">this</span>.element.find(<span class="string">".s-DialogToolbar"</span>).addClass(<span class="string">"hide"</span>);                 </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            Serenity.TabsExtensions.setDisabled(<span class="keyword">this</span>.tabs, <span class="string">'Orders'</span>, <span class="keyword">this</span>.entity.InventoryStatusId == <span class="number">0</span>);</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.entity.InventoryStatusId &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                Serenity.TabsExtensions.selectTab(<span class="keyword">this</span>.tabs, <span class="string">'Orders'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">this</span>.adjustLineGrid.inventoryEntity = entity;</span><br><span class="line">            <span class="keyword">this</span>.adjustLineGrid.myCallback = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                self.reloadById();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="加入Button"><a href="#加入Button" class="headerlink" title="加入Button"></a><strong>加入Button</strong></h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> getToolbarButtons(): Serenity.ToolButton[] &#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">let</span> buttons = <span class="keyword">super</span>.getToolbarButtons();</span><br><span class="line">            <span class="keyword">var</span> self = <span class="keyword">this</span>;</span><br><span class="line">            buttons.push(&#123;</span><br><span class="line">                title: Q.text(<span class="string">"Db.Stock.InventoryAdjust.StartInventory"</span>),</span><br><span class="line">                cssClass: <span class="string">'confirm-button hide'</span>,              </span><br><span class="line">                onClick: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (self.entity.InventoryAdjustTypeId == <span class="number">1</span>)<span class="comment">//AllProductOfOneLocation</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        self.creatInventoryLineByLocationId(<span class="keyword">this</span>.entityId, <span class="keyword">this</span>.entity.StockLocationId);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        self.setInventoryAdjustStatus(<span class="keyword">this</span>.entityId, <span class="number">1</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                    </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);         </span><br><span class="line">            <span class="keyword">return</span> buttons;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="增加表单验证"><a href="#增加表单验证" class="headerlink" title="增加表单验证"></a>增加表单验证</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.form.Password.addValidationRule(<span class="keyword">this</span>.uniqueName, <span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">this</span>.form.Password.value.length &lt; <span class="number">7</span>)</span><br><span class="line">                    <span class="keyword">return</span> <span class="string">"Password must be at least 7 characters!"</span>;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">this</span>.form.PasswordConfirm.addValidationRule(<span class="keyword">this</span>.uniqueName, <span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">this</span>.form.Password.value != <span class="keyword">this</span>.form.PasswordConfirm.value)</span><br><span class="line">                    <span class="keyword">return</span> <span class="string">"The passwords entered doesn't match!"</span>;</span><br><span class="line">            &#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Dialog设置只读模式"><a href="#Dialog设置只读模式" class="headerlink" title="Dialog设置只读模式"></a>Dialog设置只读模式</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> updateInterface(): <span class="built_in">void</span> &#123;</span><br><span class="line">            <span class="keyword">super</span>.updateInterface();</span><br><span class="line">            Serenity.EditorUtils.setReadonly(<span class="keyword">this</span>.element.find(<span class="string">'.editor'</span>), <span class="literal">true</span>);</span><br><span class="line">            <span class="keyword">this</span>.element.find(<span class="string">'sup'</span>).hide();</span><br><span class="line">            <span class="keyword">this</span>.toolbar.element.hide();</span><br><span class="line">             <span class="keyword">this</span>.element.find(<span class="string">".add-button"</span>).remove();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="getDialogOptions"><a href="#getDialogOptions" class="headerlink" title="getDialogOptions"></a>getDialogOptions</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> getDialogOptions(): JQueryUI.DialogOptions &#123;</span><br><span class="line">            <span class="keyword">let</span> opt = <span class="keyword">super</span>.getDialogOptions();</span><br><span class="line">            opt.height = <span class="number">800</span>;</span><br><span class="line">            opt.width = <span class="number">500</span>;</span><br><span class="line">            <span class="keyword">return</span> opt;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> DialogOptions <span class="keyword">extends</span> DialogEvents &#123;</span><br><span class="line">        autoOpen?: <span class="built_in">boolean</span>;</span><br><span class="line">        buttons?: &#123; [buttonText: <span class="built_in">string</span>]: <span class="function">(<span class="params">event?: Event</span>) =&gt;</span> <span class="built_in">void</span> &#125; | DialogButtonOptions[];</span><br><span class="line">        closeOnEscape?: <span class="built_in">boolean</span>;</span><br><span class="line">        classes?: DialogClasses;</span><br><span class="line">        closeText?: <span class="built_in">string</span>;</span><br><span class="line">        appendTo?: <span class="built_in">string</span>;</span><br><span class="line">        dialogClass?: <span class="built_in">string</span>;</span><br><span class="line">        disabled?: <span class="built_in">boolean</span>;</span><br><span class="line">        draggable?: <span class="built_in">boolean</span>;</span><br><span class="line">        height?: <span class="built_in">number</span> | <span class="built_in">string</span>;</span><br><span class="line">        hide?: <span class="built_in">boolean</span> | <span class="built_in">number</span> | <span class="built_in">string</span> | DialogShowHideOptions;</span><br><span class="line">        maxHeight?: <span class="built_in">number</span>;</span><br><span class="line">        maxWidth?: <span class="built_in">number</span>;</span><br><span class="line">        minHeight?: <span class="built_in">number</span>;</span><br><span class="line">        minWidth?: <span class="built_in">number</span>;</span><br><span class="line">        modal?: <span class="built_in">boolean</span>;</span><br><span class="line">        position?: <span class="built_in">any</span>; <span class="comment">// object, string or []</span></span><br><span class="line">        resizable?: <span class="built_in">boolean</span>;</span><br><span class="line">        show?: <span class="built_in">boolean</span> | <span class="built_in">number</span> | <span class="built_in">string</span> | DialogShowHideOptions;</span><br><span class="line">        stack?: <span class="built_in">boolean</span>;</span><br><span class="line">        title?: <span class="built_in">string</span>;</span><br><span class="line">        width?: <span class="built_in">any</span>; <span class="comment">// number or string</span></span><br><span class="line">        zIndex?: <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line">		open?: DialogEvent;</span><br><span class="line">        close?: DialogEvent;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置RowEditor的高度"><a href="#设置RowEditor的高度" class="headerlink" title="设置RowEditor的高度"></a>设置RowEditor的高度</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nathan2020-0126.github.io/SerenityMannual/2020/02/04/Dialog%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/" data-id="ck67uk6a60000kotp0a0eeaxw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/SerenityMannual/2020/02/04/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          图片测试
+        
+      </div>
+    </a>
+  
+  
+    <a href="/SerenityMannual/2020/02/04/React/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">React</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/SerenityMannual/archives/2020/02/">February 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/SerenityMannual/2020/02/04/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/">图片测试</a>
+          </li>
+        
+          <li>
+            <a href="/SerenityMannual/2020/02/04/Dialog%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/">Dialog中的方法</a>
+          </li>
+        
+          <li>
+            <a href="/SerenityMannual/2020/02/04/React/">React</a>
+          </li>
+        
+          <li>
+            <a href="/SerenityMannual/2020/02/02/Grid%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/">Grid中的方法</a>
+          </li>
+        
+          <li>
+            <a href="/SerenityMannual/2020/02/02/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/SerenityMannual/" class="mobile-nav-link">Home</a>
+  
+    <a href="/SerenityMannual/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/SerenityMannual/fancybox/jquery.fancybox.css">
+
+  
+<script src="/SerenityMannual/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/SerenityMannual/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

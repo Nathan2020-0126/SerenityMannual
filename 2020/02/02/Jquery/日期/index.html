@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>日期 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="常用的日期操作1234567891011121314var today &#x3D; new Date();&#x2F;&#x2F;获取当前年var year&#x3D;today.getFullYear();&#x2F;&#x2F;获取当前月var month&#x3D;today.getMonth()+1;&#x2F;&#x2F;获取当前日var date&#x3D;today.getDate(); &#x2F;&#x2F;获取当前小时数(0-23)var h&#x3D;today.getHours();       &#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="日期">
+<meta property="og:url" content="https://nathan2020-0126.github.io/SerenityMannual/2020/02/02/Jquery/%E6%97%A5%E6%9C%9F/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="常用的日期操作1234567891011121314var today &#x3D; new Date();&#x2F;&#x2F;获取当前年var year&#x3D;today.getFullYear();&#x2F;&#x2F;获取当前月var month&#x3D;today.getMonth()+1;&#x2F;&#x2F;获取当前日var date&#x3D;today.getDate(); &#x2F;&#x2F;获取当前小时数(0-23)var h&#x3D;today.getHours();       &#x2F;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-02-02T08:01:42.475Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/SerenityMannual/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/SerenityMannual/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/SerenityMannual/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/SerenityMannual/">Home</a>
+        
+          <a class="main-nav-link" href="/SerenityMannual/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/SerenityMannual/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://nathan2020-0126.github.io/SerenityMannual"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Jquery/日期" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/SerenityMannual/2020/02/02/Jquery/%E6%97%A5%E6%9C%9F/" class="article-date">
+  <time datetime="2020-02-01T16:00:00.000Z" itemprop="datePublished">2020-02-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      日期
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="常用的日期操作"><a href="#常用的日期操作" class="headerlink" title="常用的日期操作"></a>常用的日期操作</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> today = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="comment">//获取当前年</span></span><br><span class="line"><span class="keyword">var</span> year=today.getFullYear();</span><br><span class="line"><span class="comment">//获取当前月</span></span><br><span class="line"><span class="keyword">var</span> month=today.getMonth()+<span class="number">1</span>;</span><br><span class="line"><span class="comment">//获取当前日</span></span><br><span class="line"><span class="keyword">var</span> date=today.getDate(); </span><br><span class="line"><span class="comment">//获取当前小时数(0-23)</span></span><br><span class="line"><span class="keyword">var</span> h=today.getHours();       </span><br><span class="line"><span class="comment">//获取当前分钟数(0-59)</span></span><br><span class="line"><span class="keyword">var</span> m=today.getMinutes();    </span><br><span class="line"><span class="keyword">var</span> s=today.getSeconds();  </span><br><span class="line"><span class="comment">//输出为yyyy-MM-hh格式的字符串</span></span><br><span class="line"><span class="keyword">var</span> orderDate = year+<span class="string">'-'</span>+month+<span class="string">"-"</span>+date;</span><br></pre></td></tr></table></figure>
+
+<h3 id="指定的日期加一天"><a href="#指定的日期加一天" class="headerlink" title="指定的日期加一天"></a>指定的日期加一天</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> addDate = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2019-10-31'</span>).getTime() + (<span class="number">1000</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span>));</span><br></pre></td></tr></table></figure>
+
+<h3 id="判断日期大小"><a href="#判断日期大小" class="headerlink" title="判断日期大小"></a>判断日期大小</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nathan2020-0126.github.io/SerenityMannual/2020/02/02/Jquery/%E6%97%A5%E6%9C%9F/" data-id="ck67uk6ao0006kotp4zil5tpx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/SerenityMannual/2020/02/02/%E5%9C%A8Serenity%E4%B8%AD%E6%B7%BB%E5%8A%A0%E9%A1%B5%E7%AD%BE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          在Sernity中添加页签
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/SerenityMannual/archives/2020/02/">February 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/SerenityMannual/2020/02/04/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/">图片测试</a>
+          </li>
+        
+          <li>
+            <a href="/SerenityMannual/2020/02/04/Dialog%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/">Dialog中的方法</a>
+          </li>
+        
+          <li>
+            <a href="/SerenityMannual/2020/02/04/React/">React</a>
+          </li>
+        
+          <li>
+            <a href="/SerenityMannual/2020/02/02/Grid%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/">Grid中的方法</a>
+          </li>
+        
+          <li>
+            <a href="/SerenityMannual/2020/02/02/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/SerenityMannual/" class="mobile-nav-link">Home</a>
+  
+    <a href="/SerenityMannual/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/SerenityMannual/fancybox/jquery.fancybox.css">
+
+  
+<script src="/SerenityMannual/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/SerenityMannual/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
