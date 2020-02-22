@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>React | Serenity</title>
+  <title>Serenity开发实践 | Serenity</title>
   <meta name="keywords" content="">
-  <meta name="description" content="React | Serenity">
+  <meta name="description" content="Serenity开发实践 | Serenity">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="应用服务、领域服务和Data Transfer Object 为每一个流程建一套EndPoint，Repository和DTO，比如生产问题的上报、解决和反馈   为每一个针对Entity的操作写一个独立的方法，命名规范为{action}{entity}, cancel{action}_{entity}  组合方法的命名规范为 {action}{action}{action}_{entity}">
 <meta property="og:type" content="article">
@@ -236,9 +236,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-React/React" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Serenity开发实践" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">React</h1>
+        <h1 class="article-title">Serenity开发实践</h1>
     
     <div class="article-meta">
         
@@ -248,7 +248,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-02-10 20:53:55'>2020-02-04 00:00</time>
+        创建时间:<time class="date" title='更新时间: 2020-02-22 18:56:55'>2020-02-22 00:00</time>
         
     </div>
     <div class="article-meta">
@@ -270,7 +270,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#组件生命周期"><span class="toc-text">组件生命周期</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条件渲染"><span class="toc-text">条件渲染</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#元素条件"><span class="toc-text">元素条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三目运算符"><span class="toc-text">三目运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环渲染"><span class="toc-text">循环渲染</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#For循环"><span class="toc-text">For循环</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#应用服务、领域服务和Data-Transfer-Object"><span class="toc-text">应用服务、领域服务和Data Transfer Object</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -286,15 +286,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="组件生命周期"><a href="#组件生命周期" class="headerlink" title="组件生命周期"></a>组件生命周期</h3><p><img src="http://aliyunzixunbucket.oss-cn-beijing.aliyuncs.com/jpg/fb9443b4a481ef9082b1160ea1ff3c2c.jpg?x-oss-process=image/resize,p_100/auto-orient,1/quality,q_90/format,jpg/watermark,image_eXVuY2VzaGk=,t_100" alt="http://aliyunzixunbucket.oss-cn-beijing.aliyuncs.com/jpg/fb9443b4a481ef9082b1160ea1ff3c2c.jpg?x-oss-process=image/resize,p_100/auto-orient,1/quality,q_90/format,jpg/watermark,image_eXVuY2VzaGk=,t_100"></p>
-<h2 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h2><h3 id="元素条件"><a href="#元素条件" class="headerlink" title="元素条件"></a>元素条件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Mailbox</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> unreadMessages = props.unreadMessages;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;Hello!&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">      &#123;unreadMessages.length &gt; 0 &amp;&amp;</span></span><br><span class="line"><span class="regexp">        &lt;h2&gt;</span></span><br><span class="line"><span class="regexp">          您有 &#123;unreadMessages.length&#125; 条未读信息。</span></span><br><span class="line"><span class="regexp">        &lt;/</span>h2&gt;</span><br><span class="line">      &#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"> </span></span><br><span class="line"><span class="regexp">const messages = ['React', 'Re: React', 'Re:Re: React'];</span></span><br><span class="line"><span class="regexp">ReactDOM.render(</span></span><br><span class="line"><span class="regexp">  &lt;Mailbox unreadMessages=&#123;messages&#125; /</span>&gt;,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'example'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+        <h2 id="应用服务、领域服务和Data-Transfer-Object"><a href="#应用服务、领域服务和Data-Transfer-Object" class="headerlink" title="应用服务、领域服务和Data Transfer Object"></a>应用服务、领域服务和Data Transfer Object</h2><ol>
+<li><p>为每一个流程建一套EndPoint，Repository和DTO，比如生产问题的上报、解决和反馈</p>
+<p><img src="/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/image-20200222185624686.png" alt="image-20200222185624686"></p>
+</li>
+<li><p>为每一个针对Entity的操作写一个独立的方法，命名规范为<em>{action}<em>{entity}, cancel</em>{action}_{entity}</em></p>
+</li>
+<li><p>组合方法的命名规范为 <em>{action}<em>{action}</em>{action}_{entity}</em></p>
+</li>
+<li><p>将方法按照流程的生命周期排放，例如，创建，提交，反馈，评审，审核，解决，关闭. 用#Region包裹起来</p>
+<p><img src="/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/image-20200222185558091.png" alt="image-20200222185558091"></p>
+</li>
+<li><p>为EndPoint里的每一个方法创建Request和Response DTO,</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ReleaseProdOrderOrderItemRequest</span> : <span class="title">ServiceRequest</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> Guid ProdOrderItemReserveId &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="keyword">public</span> Decimal? ReleaseQty &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="keyword">public</span> DateTime EstimatedStartDate &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ReleaseProdOrderItemResponse</span> : <span class="title">ServiceResponse</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> Guid ProdOrderItemReleaseRecordId;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="三目运算符"><a href="#三目运算符" class="headerlink" title="三目运算符"></a>三目运算符</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">  <span class="keyword">const</span> isLoggedIn = <span class="keyword">this</span>.state.isLoggedIn;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &#123;isLoggedIn ? (</span><br><span class="line">        &lt;LogoutButton onClick=&#123;<span class="keyword">this</span>.handleLogoutClick&#125; /&gt;</span><br><span class="line">      ) : (</span><br><span class="line">        &lt;LoginButton onClick=&#123;<span class="keyword">this</span>.handleLoginClick&#125; /&gt;</span><br><span class="line">      )&#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="循环渲染"><a href="#循环渲染" class="headerlink" title="循环渲染"></a>循环渲染</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;data.FirstInspectionRule.InspRuleControlPoints.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">                                                <span class="keyword">return</span> &lt;div className=<span class="string">"col-md-12"</span>&gt;</span><br><span class="line">                                                        &lt;span key=&#123;index&#125; className=<span class="string">"text-muted form-label"</span> style=&#123;&#123; marginLeft: <span class="string">"5px"</span> &#125;&#125;&gt;控制点&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">                                                        &lt;span key=&#123;index&#125; className="form-value"&gt;&#123;item.QualityControlPointQualityControlPointName&#125; &lt;/</span>span&gt;</span><br><span class="line">                                                        &lt;span key=&#123;index&#125; className=<span class="string">"text-muted form-label"</span> style=&#123;&#123; marginLeft: <span class="string">"5px"</span> &#125;&#125;&gt;基准值&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">                                                        &lt;span key=&#123;index&#125; className="form-value"&gt;&#123;item.ReferenceValue&#125; &#123;item.ReferenceValueUnit&#125;&lt;/</span>span&gt;</span><br><span class="line">                                                        &lt;span key=&#123;index&#125; className=<span class="string">"form-value"</span>&gt;(&#123;item.ReferenceValueLowLimit&#125; - &#123;item.ReferenceValueUpLimit&#125;)&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">                                                        &lt;span key=&#123;index&#125; className="text-muted form-label" style=&#123;&#123; marginLeft: "5px" &#125;&#125;&gt;量检具&lt;/</span>span&gt;</span><br><span class="line">                                                        &lt;span key=&#123;index&#125; className=<span class="string">"form-value"</span>&gt;&#123;item.GaugeGaugeName&#125;&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">                                                    &lt;/</span>div&gt;</span><br><span class="line">                                                &#125;)&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="For循环"><a href="#For循环" class="headerlink" title="For循环"></a>For循环</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> createInputs(count: <span class="built_in">number</span>) &#123;</span><br><span class="line">            <span class="keyword">let</span> inputs = [];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</span><br><span class="line">                inputs.push(&lt;input <span class="keyword">type</span>=<span class="string">"text"</span> placeholder=&#123;(i + <span class="number">1</span>).toString()&#125; /&gt;)</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> inputs;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="6">
+<li><p>Repository的方法不需要DTO, 按照普通传参的方式，对一些通用的、可以组合的参数创建一个类。比如检验结果：合格、报废、返工、回用</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">InspectionResultDto</span> &#123;</span><br><span class="line">        <span class="keyword">public</span> Decimal? PassQty = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">public</span> Decimal? ScrapQty = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">public</span> Decimal? ReUseQty = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">public</span> Decimal? ReWorkQty = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">public</span> Decimal TotalQty</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> (Decimal)PassQty + (Decimal)ScrapQty + (Decimal)ReUseQty + (Decimal)ReWorkQty;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">public</span> Decimal HandOverQty &#123;</span><br><span class="line">            <span class="keyword">get</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> (Decimal)PassQty + (Decimal)ReUseQty;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
+
+
+
+
+</li>
+</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
@@ -308,12 +327,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>React</p>
+    <p><span class="copy-title">文章标题:</span>Serenity开发实践</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="Nathan">Nathan</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-02-04, 00:00:00</p>
-    <p><span class="copy-title">最后更新:</span>2020-02-10, 20:53:55</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/SerenityMannual/2020/02/04/React/React/" title="React">https://nathan2020-0126.github.io/SerenityMannual/2020/02/04/React/React/</a>
+    <p><span class="copy-title">发布时间:</span>2020-02-22, 00:00:00</p>
+    <p><span class="copy-title">最后更新:</span>2020-02-22, 18:56:55</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/" title="Serenity开发实践">https://nathan2020-0126.github.io/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

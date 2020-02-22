@@ -6,17 +6,20 @@
   <meta name="keywords" content="">
   <meta name="description" content="Serenity">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="枚举枚举值显示名称12&#x2F;&#x2F;Serenity.EnumFormatter.format(枚举类型, data.LastInspectionRule.InspectionModel)Serenity.EnumFormatter.format(Quality.Enum.InspectionModel, data.LastInspectionRule.InspectionModel)  Lookup获取L">
+<meta name="description" content="应用服务、领域服务和Data Transfer Object 为每一个流程建一套EndPoint，Repository和DTO，比如生产问题的上报、解决和反馈   为每一个针对Entity的操作写一个独立的方法，命名规范为{action}{entity}, cancel{action}_{entity}  组合方法的命名规范为 {action}{action}{action}_{entity}">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Serenity常用方法">
-<meta property="og:url" content="https://nathan2020-0126.github.io/SerenityMannual/2020/02/05/Serenity%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:title" content="Serenity开发实践">
+<meta property="og:url" content="https://nathan2020-0126.github.io/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/index.html">
 <meta property="og:site_name" content="Serenity">
-<meta property="og:description" content="枚举枚举值显示名称12&#x2F;&#x2F;Serenity.EnumFormatter.format(枚举类型, data.LastInspectionRule.InspectionModel)Serenity.EnumFormatter.format(Quality.Enum.InspectionModel, data.LastInspectionRule.InspectionModel)  Lookup获取L">
+<meta property="og:description" content="应用服务、领域服务和Data Transfer Object 为每一个流程建一套EndPoint，Repository和DTO，比如生产问题的上报、解决和反馈   为每一个针对Entity的操作写一个独立的方法，命名规范为{action}{entity}, cancel{action}_{entity}  组合方法的命名规范为 {action}{action}{action}_{entity}">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-04T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-02-18T08:49:16.450Z">
+<meta property="og:image" content="https://nathan2020-0126.github.io/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/image-20200222185624686.png">
+<meta property="og:image" content="https://nathan2020-0126.github.io/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/image-20200222185558091.png">
+<meta property="article:published_time" content="2020-02-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-02-22T10:56:55.423Z">
 <meta property="article:author" content="Nathan">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://nathan2020-0126.github.io/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/image-20200222185624686.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -89,7 +92,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(9)</small></div></li>
+    <li><div class="all active">全部文章<small>(10)</small></div></li>
     
 </ul>
 <div class="left-bottom">
@@ -101,7 +104,7 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="9">
+<input type="hidden" id="yelog_site_posts_number" value="10">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -213,6 +216,14 @@
             <span class="post-date" title="2020-02-04 00:00:00">2020/02/04</span>
         </a>
         
+        <a  class=""
+           href="/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Serenity开发实践">Serenity开发实践</span>
+            <span class="post-date" title="2020-02-22 00:00:00">2020/02/22</span>
+        </a>
+        
     </nav>
 </div>
     </div>
@@ -228,7 +239,7 @@
         <article class="index">
             <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于叶落阁"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#关于本站"><span class="toc-text">关于本站</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -241,20 +252,7 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阿杰（杨玉杰）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
+            <h1 id="关于本站"><a href="#关于本站" class="headerlink" title="关于本站"></a>关于本站</h1><p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
 <p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
 <h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源</p>
 <p>主要功能：</p>
