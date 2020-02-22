@@ -6,27 +6,24 @@
   <meta name="keywords" content="">
   <meta name="description" content="开发步骤 | Serenity">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="应用服务、领域服务和Data Transfer Object 为每一个流程建一套EndPoint，Repository和DTO，比如生产问题的上报、解决和反馈   为每一个针对Entity的操作写一个独立的方法，命名规范为{action}{entity}, cancel{action}_{entity}  组合方法的命名规范为 {action}{action}{action}_{entity}">
+<meta name="description" content="主外键关系 加在Row上面   [LeftJoin(&quot;cd&quot;, &quot;CustomerDetails&quot;, &quot;cd.[ID] &#x3D; T0.[ID]&quot;, RowType &#x3D; typeof(CustomerDetailsRow), TitlePrefix &#x3D; &quot;&quot;)]  加载Field上面   [DisplayName(&amp;quot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Serenity开发实践">
-<meta property="og:url" content="https://nathan2020-0126.github.io/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/index.html">
+<meta property="og:title" content="Entity(Row)">
+<meta property="og:url" content="https://nathan2020-0126.github.io/SerenityMannual/2020/02/22/Entity(Row)/index.html">
 <meta property="og:site_name" content="Serenity">
-<meta property="og:description" content="应用服务、领域服务和Data Transfer Object 为每一个流程建一套EndPoint，Repository和DTO，比如生产问题的上报、解决和反馈   为每一个针对Entity的操作写一个独立的方法，命名规范为{action}{entity}, cancel{action}_{entity}  组合方法的命名规范为 {action}{action}{action}_{entity}">
+<meta property="og:description" content="主外键关系 加在Row上面   [LeftJoin(&quot;cd&quot;, &quot;CustomerDetails&quot;, &quot;cd.[ID] &#x3D; T0.[ID]&quot;, RowType &#x3D; typeof(CustomerDetailsRow), TitlePrefix &#x3D; &quot;&quot;)]  加载Field上面   [DisplayName(&amp;quot">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://nathan2020-0126.github.io/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/image-20200222185624686.png">
-<meta property="og:image" content="https://nathan2020-0126.github.io/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/image-20200222185558091.png">
 <meta property="article:published_time" content="2020-02-21T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-02-22T10:56:55.423Z">
+<meta property="article:modified_time" content="2020-02-22T11:12:51.242Z">
 <meta property="article:author" content="Nathan">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://nathan2020-0126.github.io/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/image-20200222185624686.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
 
 <link href="/SerenityMannual/css/style.css?v=1.0.1" rel="stylesheet">
 
-<link href="/SerenityMannual/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+<link href="/SerenityMannual/css/hl_theme/github.css?v=1.0.1" rel="stylesheet">
 
 <link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -92,7 +89,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(10)</small></div></li>
+    <li><div class="all active">全部文章<small>(12)</small></div></li>
     
 </ul>
 <div class="left-bottom">
@@ -104,7 +101,7 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="10">
+<input type="hidden" id="yelog_site_posts_number" value="12">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -145,11 +142,11 @@
     <nav id="title-list-nav">
         
         <a  class=""
-           href="/SerenityMannual/2020/02/02/Serenity%E4%BB%8B%E7%BB%8D/"
+           href="/SerenityMannual/2020/02/02/Grid%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="Serenity介绍">Serenity介绍</span>
-            <span class="post-date" title="2020-02-02 00:00:00">2020/02/02</span>
+            <span class="post-title" title="Grid中的方法">Grid中的方法</span>
+            <span class="post-date" title="2020-02-02 10:32:38">2020/02/02</span>
         </a>
         
         <a  class=""
@@ -161,11 +158,27 @@
         </a>
         
         <a  class=""
-           href="/SerenityMannual/2020/02/02/Grid%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/"
+           href="/SerenityMannual/2020/02/22/Entity(Row)/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="Grid中的方法">Grid中的方法</span>
-            <span class="post-date" title="2020-02-02 10:32:38">2020/02/02</span>
+            <span class="post-title" title="Entity(Row)">Entity(Row)</span>
+            <span class="post-date" title="2020-02-22 00:00:00">2020/02/22</span>
+        </a>
+        
+        <a  class=""
+           href="/SerenityMannual/2020/02/22/Page/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Page">Page</span>
+            <span class="post-date" title="2020-02-22 00:00:00">2020/02/22</span>
+        </a>
+        
+        <a  class=""
+           href="/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Serenity开发实践">Serenity开发实践</span>
+            <span class="post-date" title="2020-02-22 00:00:00">2020/02/22</span>
         </a>
         
         <a  class=""
@@ -173,14 +186,6 @@
            data-tag=""
            data-author="" >
             <span class="post-title" title="Sergen代码生成器">Sergen代码生成器</span>
-            <span class="post-date" title="2020-02-02 00:00:00">2020/02/02</span>
-        </a>
-        
-        <a  class=""
-           href="/SerenityMannual/2020/02/02/%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="开发步骤">开发步骤</span>
             <span class="post-date" title="2020-02-02 00:00:00">2020/02/02</span>
         </a>
         
@@ -193,10 +198,18 @@
         </a>
         
         <a  class=""
-           href="/SerenityMannual/2020/02/02/Jquery/%E6%97%A5%E6%9C%9F/"
+           href="/SerenityMannual/2020/02/02/%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="日期">日期</span>
+            <span class="post-title" title="开发步骤">开发步骤</span>
+            <span class="post-date" title="2020-02-02 00:00:00">2020/02/02</span>
+        </a>
+        
+        <a  class=""
+           href="/SerenityMannual/2020/02/02/Serenity%E4%BB%8B%E7%BB%8D/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Serenity介绍">Serenity介绍</span>
             <span class="post-date" title="2020-02-02 00:00:00">2020/02/02</span>
         </a>
         
@@ -209,19 +222,19 @@
         </a>
         
         <a  class=""
+           href="/SerenityMannual/2020/02/02/Jquery/%E6%97%A5%E6%9C%9F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="日期">日期</span>
+            <span class="post-date" title="2020-02-02 00:00:00">2020/02/02</span>
+        </a>
+        
+        <a  class=""
            href="/SerenityMannual/2020/02/04/React/React/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="React">React</span>
             <span class="post-date" title="2020-02-04 00:00:00">2020/02/04</span>
-        </a>
-        
-        <a  class=""
-           href="/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Serenity开发实践">Serenity开发实践</span>
-            <span class="post-date" title="2020-02-22 00:00:00">2020/02/22</span>
         </a>
         
     </nav>
@@ -311,24 +324,90 @@
 <h3 id="配置软删除的特性-非必须"><a href="#配置软删除的特性-非必须" class="headerlink" title="配置软删除的特性 (非必须)"></a>配置软删除的特性 (非必须)</h3><ol>
 <li><h4 id="在仓储服务Repository增加取消删除的方法"><a href="#在仓储服务Repository增加取消删除的方法" class="headerlink" title="在仓储服务Repository增加取消删除的方法"></a>在仓储服务Repository增加取消删除的方法</h4></li>
 </ol>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">WorkcenterRepository</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> MyRow.RowFields fld &#123; <span class="keyword">get</span> &#123; <span class="keyword">return</span> MyRow.Fields; &#125; &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> SaveResponse <span class="title">Create</span>(<span class="params">IUnitOfWork uow, SaveRequest&lt;MyRow&gt; request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MySaveHandler().Process(uow, request, SaveRequestType.Create);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> SaveResponse <span class="title">Update</span>(<span class="params">IUnitOfWork uow, SaveRequest&lt;MyRow&gt; request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MySaveHandler().Process(uow, request, SaveRequestType.Update);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> DeleteResponse <span class="title">Delete</span>(<span class="params">IUnitOfWork uow, DeleteRequest request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MyDeleteHandler().Process(uow, request);</span><br><span class="line">        &#125;</span><br><span class="line">          <span class="comment">//复制下面 三行</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> UndeleteResponse <span class="title">Undelete</span>(<span class="params">IUnitOfWork uow, UndeleteRequest request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MyUndeleteHandler().Process(uow, request);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> RetrieveResponse&lt;MyRow&gt; <span class="title">Retrieve</span>(<span class="params">IDbConnection connection, RetrieveRequest request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MyRetrieveHandler().Process(connection, request);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> ListResponse&lt;MyRow&gt; <span class="title">List</span>(<span class="params">IDbConnection connection, ListRequest request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MyListHandler().Process(connection, request);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private class MySaveHandler : SaveRequestHandler&lt;MyRow&gt; &#123; &#125;</span><br><span class="line">        private class MyDeleteHandler : DeleteRequestHandler&lt;MyRow&gt; &#123; &#125;</span><br><span class="line">        <span class="comment">//复制下面 一行</span></span><br><span class="line">        private class MyUndeleteHandler : UndeleteRequestHandler&lt;MyRow&gt; &#123; &#125;</span><br><span class="line">        private class MyRetrieveHandler : RetrieveRequestHandler&lt;MyRow&gt; &#123; &#125;</span><br><span class="line">        private class MyListHandler : ListRequestHandler&lt;MyRow&gt; &#123; &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="c#">public class WorkcenterRepository
+    {
+        private static MyRow.RowFields fld { get { return MyRow.Fields; } }
 
+        public SaveResponse Create(IUnitOfWork uow, SaveRequest&lt;MyRow&gt; request)
+        {
+            return new MySaveHandler().Process(uow, request, SaveRequestType.Create);
+        }
 
+        public SaveResponse Update(IUnitOfWork uow, SaveRequest&lt;MyRow&gt; request)
+        {
+            return new MySaveHandler().Process(uow, request, SaveRequestType.Update);
+        }
 
+        public DeleteResponse Delete(IUnitOfWork uow, DeleteRequest request)
+        {
+            return new MyDeleteHandler().Process(uow, request);
+        }
+          //复制下面 三行
+        public UndeleteResponse Undelete(IUnitOfWork uow, UndeleteRequest request)
+        {
+            return new MyUndeleteHandler().Process(uow, request);
+        }
+        public RetrieveResponse&lt;MyRow&gt; Retrieve(IDbConnection connection, RetrieveRequest request)
+        {
+            return new MyRetrieveHandler().Process(connection, request);
+        }
+
+        public ListResponse&lt;MyRow&gt; List(IDbConnection connection, ListRequest request)
+        {
+            return new MyListHandler().Process(connection, request);
+        }
+
+        private class MySaveHandler : SaveRequestHandler&lt;MyRow&gt; { }
+        private class MyDeleteHandler : DeleteRequestHandler&lt;MyRow&gt; { }
+        //复制下面 一行
+        private class MyUndeleteHandler : UndeleteRequestHandler&lt;MyRow&gt; { }
+        private class MyRetrieveHandler : RetrieveRequestHandler&lt;MyRow&gt; { }
+        private class MyListHandler : ListRequestHandler&lt;MyRow&gt; { }
+    }</code></pre>
 <ol start="2">
 <li><h4 id="在EndPoints里增加方法"><a href="#在EndPoints里增加方法" class="headerlink" title="在EndPoints里增加方法"></a>在EndPoints里增加方法</h4></li>
 </ol>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">WorkcenterController</span> : <span class="title">ServiceEndpoint</span></span><br><span class="line">    &#123;</span><br><span class="line">        [<span class="meta">HttpPost, AuthorizeCreate(typeof(MyRow))</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> SaveResponse <span class="title">Create</span>(<span class="params">IUnitOfWork uow, SaveRequest&lt;MyRow&gt; request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MyRepository().Create(uow, request);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        [<span class="meta">HttpPost, AuthorizeUpdate(typeof(MyRow))</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> SaveResponse <span class="title">Update</span>(<span class="params">IUnitOfWork uow, SaveRequest&lt;MyRow&gt; request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MyRepository().Update(uow, request);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        [<span class="meta">HttpPost, AuthorizeDelete(typeof(MyRow))</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> DeleteResponse <span class="title">Delete</span>(<span class="params">IUnitOfWork uow, DeleteRequest request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MyRepository().Delete(uow, request);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//复制下面的方法</span></span><br><span class="line">        [<span class="meta">HttpPost, AuthorizeDelete(typeof(MyRow))</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> UndeleteResponse <span class="title">Undelete</span>(<span class="params">IUnitOfWork uow, UndeleteRequest request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MyRepository().Undelete(uow, request);</span><br><span class="line">        &#125;</span><br><span class="line">        [<span class="meta">HttpPost</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> RetrieveResponse&lt;MyRow&gt; <span class="title">Retrieve</span>(<span class="params">IDbConnection connection, RetrieveRequest request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MyRepository().Retrieve(connection, request);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        [<span class="meta">HttpPost</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> ListResponse&lt;MyRow&gt; <span class="title">List</span>(<span class="params">IDbConnection connection, ListRequest request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MyRepository().List(connection, request);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="c#">public class WorkcenterController : ServiceEndpoint
+    {
+        [HttpPost, AuthorizeCreate(typeof(MyRow))]
+        public SaveResponse Create(IUnitOfWork uow, SaveRequest&lt;MyRow&gt; request)
+        {
+            return new MyRepository().Create(uow, request);
+        }
 
+        [HttpPost, AuthorizeUpdate(typeof(MyRow))]
+        public SaveResponse Update(IUnitOfWork uow, SaveRequest&lt;MyRow&gt; request)
+        {
+            return new MyRepository().Update(uow, request);
+        }
 
+        [HttpPost, AuthorizeDelete(typeof(MyRow))]
+        public DeleteResponse Delete(IUnitOfWork uow, DeleteRequest request)
+        {
+            return new MyRepository().Delete(uow, request);
+        }
+        //复制下面的方法
+        [HttpPost, AuthorizeDelete(typeof(MyRow))]
+        public UndeleteResponse Undelete(IUnitOfWork uow, UndeleteRequest request)
+        {
+            return new MyRepository().Undelete(uow, request);
+        }
+        [HttpPost]
+        public RetrieveResponse&lt;MyRow&gt; Retrieve(IDbConnection connection, RetrieveRequest request)
+        {
+            return new MyRepository().Retrieve(connection, request);
+        }
 
+        [HttpPost]
+        public ListResponse&lt;MyRow&gt; List(IDbConnection connection, ListRequest request)
+        {
+            return new MyRepository().List(connection, request);
+        }
+    }</code></pre>
 <ol start="3">
 <li><h4 id="在Dialog和Grid里增加方法，注意修改为自己的Row"><a href="#在Dialog和Grid里增加方法，注意修改为自己的Row" class="headerlink" title="在Dialog和Grid里增加方法，注意修改为自己的Row"></a>在Dialog和Grid里增加方法，注意修改为自己的Row</h4></li>
 </ol>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> getIsActiveProperty() &#123; <span class="keyword">return</span> WorkcenterRow.isActiveProperty; &#125;</span><br></pre></td></tr></table></figure>
-
-
-
+<pre><code class="typescript">protected getIsActiveProperty() { return WorkcenterRow.isActiveProperty; }</code></pre>
 <h2 id="业务逻辑的实现-服务"><a href="#业务逻辑的实现-服务" class="headerlink" title="业务逻辑的实现 - 服务"></a>业务逻辑的实现 - 服务</h2><p>通过上一步骤，我们已经有了Entity, Entity对应的仓储类方法，接下来我们要写代码实现业务逻辑。我们将实现某一个或某些业务逻辑的方法，称为服务。服务根据使用对象的不同，分为领域服务和应用服务。</p>
 <h3 id="应用服务"><a href="#应用服务" class="headerlink" title="应用服务"></a>应用服务</h3><p>应用服务都是继承自ServiceEndPoint</p>
 <p>DTO分为Request和Response, 分别继承自 ServiceRequest 和 ServiceResponse.</p>
@@ -336,8 +415,16 @@
 <p>后端示例</p>
 <p><img src="/SerenityMannual/2020/02/02/%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4/image-20200215130017059.png" alt="image-20200215130017059"></p>
 <p>前端调用示例</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Quality.Services.InProcessInspectionService.GetInspRuleTaskAsMatrix(&#123;</span><br><span class="line">                ConfirmationId: ConfirmationId,</span><br><span class="line">                WorkcenterTaskId: WorkcenterTaskId</span><br><span class="line">            &#125;, <span class="function"><span class="params">r</span> =&gt;</span> &#123;</span><br><span class="line">          </span><br><span class="line">                <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">                    inspectionRulesTaskMatrix: r</span><br><span class="line">                &#125;);</span><br><span class="line">                    <span class="keyword">this</span>.checkInspectionStatus();</span><br><span class="line">            &#125;);</span><br></pre></td></tr></table></figure>
+<pre><code class="typescript">Quality.Services.InProcessInspectionService.GetInspRuleTaskAsMatrix({
+                ConfirmationId: ConfirmationId,
+                WorkcenterTaskId: WorkcenterTaskId
+            }, r =&gt; {
 
+                this.setState({
+                    inspectionRulesTaskMatrix: r
+                });
+                    this.checkInspectionStatus();
+            });</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
@@ -506,7 +593,7 @@
         border-right: 1px solid #C3CCD0;
         text-align: right;
         color: #AAA;
-        background-color: #fafafa;
+        background-color: ;
     }
     .pre-numbering.widther {
         width: 35px;

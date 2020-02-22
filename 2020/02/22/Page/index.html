@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>日期 | Serenity</title>
+  <title>Page | Serenity</title>
   <meta name="keywords" content="">
-  <meta name="description" content="日期 | Serenity">
+  <meta name="description" content="Page | Serenity">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="主外键关系 加在Row上面   [LeftJoin(&quot;cd&quot;, &quot;CustomerDetails&quot;, &quot;cd.[ID] &#x3D; T0.[ID]&quot;, RowType &#x3D; typeof(CustomerDetailsRow), TitlePrefix &#x3D; &quot;&quot;)]  加载Field上面   [DisplayName(&amp;quot">
 <meta property="og:type" content="article">
@@ -249,9 +249,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Jquery/日期" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Page" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">日期</h1>
+        <h1 class="article-title">Page</h1>
     
     <div class="article-meta">
         
@@ -261,7 +261,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-02-02 16:01:42'>2020-02-02 00:00</time>
+        创建时间:<time class="date" title='更新时间: 2020-02-22 19:39:13'>2020-02-22 00:00</time>
         
     </div>
     <div class="article-meta">
@@ -283,7 +283,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的日期操作"><span class="toc-text">常用的日期操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指定的日期加一天"><span class="toc-text">指定的日期加一天</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断日期大小"><span class="toc-text">判断日期大小</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#增加页面"><span class="toc-text">增加页面</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -299,22 +299,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="常用的日期操作"><a href="#常用的日期操作" class="headerlink" title="常用的日期操作"></a>常用的日期操作</h3><pre><code class="javascript">var today = new Date();
-//获取当前年
-var year=today.getFullYear();
-//获取当前月
-var month=today.getMonth()+1;
-//获取当前日
-var date=today.getDate(); 
-//获取当前小时数(0-23)
-var h=today.getHours();       
-//获取当前分钟数(0-59)
-var m=today.getMinutes();    
-var s=today.getSeconds();  
-//输出为yyyy-MM-hh格式的字符串
-var orderDate = year+&#39;-&#39;+month+&quot;-&quot;+date;</code></pre>
-<h3 id="指定的日期加一天"><a href="#指定的日期加一天" class="headerlink" title="指定的日期加一天"></a>指定的日期加一天</h3><pre><code class="javascript">var addDate = new Date(new Date(&#39;2019-10-31&#39;).getTime() + (1000 * 60 * 60 * 24));</code></pre>
-<h3 id="判断日期大小"><a href="#判断日期大小" class="headerlink" title="判断日期大小"></a>判断日期大小</h3>
+        <h2 id="增加页面"><a href="#增加页面" class="headerlink" title="增加页面"></a>增加页面</h2><pre><code class="c#">namespace Mom.Workflow.Pages
+{
+    using Serenity;
+    using Serenity.Web;
+    using Microsoft.AspNetCore.Mvc;
+
+    [PageAuthorize(typeof(Entities.TaskFlowStepRow))]
+    [Route(&quot;Workflow/TaskFlowStep/[action]&quot;)]
+    public class TaskFlowStepController : Controller
+    {
+        public PartialViewResult Index()
+        {
+            return PartialView(&quot;~/Modules/Workflow/TaskFlowStep/TaskFlowStepIndex.cshtml&quot;);
+        }
+        public PartialViewResult ProdProblemTask()
+        {
+            return PartialView(&quot;~/Modules/Workflow/TaskFlowStep/ProdProblemTask/Index.cshtml&quot;);
+        }
+    }
+}
+
+//在Navagiation文件中增加如下一行
+[assembly: NavigationLink(int.MaxValue, &quot;生产/过程异常/质量异常相关任务&quot;, url: &quot;/Workflow/TaskFlowStep/ProdProblemTask&quot;, permission: &quot;*&quot;, icon: null)]</code></pre>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
@@ -327,12 +335,12 @@ var orderDate = year+&#39;-&#39;+month+&quot;-&quot;+date;</code></pre>
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>日期</p>
+    <p><span class="copy-title">文章标题:</span>Page</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="Nathan">Nathan</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-02-02, 00:00:00</p>
-    <p><span class="copy-title">最后更新:</span>2020-02-02, 16:01:42</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/SerenityMannual/2020/02/02/Jquery/%E6%97%A5%E6%9C%9F/" title="日期">https://nathan2020-0126.github.io/SerenityMannual/2020/02/02/Jquery/%E6%97%A5%E6%9C%9F/</a>
+    <p><span class="copy-title">发布时间:</span>2020-02-22, 00:00:00</p>
+    <p><span class="copy-title">最后更新:</span>2020-02-22, 19:39:13</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/SerenityMannual/2020/02/22/Page/" title="Page">https://nathan2020-0126.github.io/SerenityMannual/2020/02/22/Page/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

@@ -6,27 +6,24 @@
   <meta name="keywords" content="">
   <meta name="description" content="Serenity常用方法 | Serenity">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="应用服务、领域服务和Data Transfer Object 为每一个流程建一套EndPoint，Repository和DTO，比如生产问题的上报、解决和反馈   为每一个针对Entity的操作写一个独立的方法，命名规范为{action}{entity}, cancel{action}_{entity}  组合方法的命名规范为 {action}{action}{action}_{entity}">
+<meta name="description" content="主外键关系 加在Row上面   [LeftJoin(&quot;cd&quot;, &quot;CustomerDetails&quot;, &quot;cd.[ID] &#x3D; T0.[ID]&quot;, RowType &#x3D; typeof(CustomerDetailsRow), TitlePrefix &#x3D; &quot;&quot;)]  加载Field上面   [DisplayName(&amp;quot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Serenity开发实践">
-<meta property="og:url" content="https://nathan2020-0126.github.io/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/index.html">
+<meta property="og:title" content="Entity(Row)">
+<meta property="og:url" content="https://nathan2020-0126.github.io/SerenityMannual/2020/02/22/Entity(Row)/index.html">
 <meta property="og:site_name" content="Serenity">
-<meta property="og:description" content="应用服务、领域服务和Data Transfer Object 为每一个流程建一套EndPoint，Repository和DTO，比如生产问题的上报、解决和反馈   为每一个针对Entity的操作写一个独立的方法，命名规范为{action}{entity}, cancel{action}_{entity}  组合方法的命名规范为 {action}{action}{action}_{entity}">
+<meta property="og:description" content="主外键关系 加在Row上面   [LeftJoin(&quot;cd&quot;, &quot;CustomerDetails&quot;, &quot;cd.[ID] &#x3D; T0.[ID]&quot;, RowType &#x3D; typeof(CustomerDetailsRow), TitlePrefix &#x3D; &quot;&quot;)]  加载Field上面   [DisplayName(&amp;quot">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://nathan2020-0126.github.io/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/image-20200222185624686.png">
-<meta property="og:image" content="https://nathan2020-0126.github.io/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/image-20200222185558091.png">
 <meta property="article:published_time" content="2020-02-21T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-02-22T10:56:55.423Z">
+<meta property="article:modified_time" content="2020-02-22T11:12:51.242Z">
 <meta property="article:author" content="Nathan">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://nathan2020-0126.github.io/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/image-20200222185624686.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
 
 <link href="/SerenityMannual/css/style.css?v=1.0.1" rel="stylesheet">
 
-<link href="/SerenityMannual/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+<link href="/SerenityMannual/css/hl_theme/github.css?v=1.0.1" rel="stylesheet">
 
 <link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -92,7 +89,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(10)</small></div></li>
+    <li><div class="all active">全部文章<small>(12)</small></div></li>
     
 </ul>
 <div class="left-bottom">
@@ -104,7 +101,7 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="10">
+<input type="hidden" id="yelog_site_posts_number" value="12">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -145,11 +142,11 @@
     <nav id="title-list-nav">
         
         <a  class=""
-           href="/SerenityMannual/2020/02/02/Serenity%E4%BB%8B%E7%BB%8D/"
+           href="/SerenityMannual/2020/02/02/Grid%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="Serenity介绍">Serenity介绍</span>
-            <span class="post-date" title="2020-02-02 00:00:00">2020/02/02</span>
+            <span class="post-title" title="Grid中的方法">Grid中的方法</span>
+            <span class="post-date" title="2020-02-02 10:32:38">2020/02/02</span>
         </a>
         
         <a  class=""
@@ -161,11 +158,27 @@
         </a>
         
         <a  class=""
-           href="/SerenityMannual/2020/02/02/Grid%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/"
+           href="/SerenityMannual/2020/02/22/Entity(Row)/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="Grid中的方法">Grid中的方法</span>
-            <span class="post-date" title="2020-02-02 10:32:38">2020/02/02</span>
+            <span class="post-title" title="Entity(Row)">Entity(Row)</span>
+            <span class="post-date" title="2020-02-22 00:00:00">2020/02/22</span>
+        </a>
+        
+        <a  class=""
+           href="/SerenityMannual/2020/02/22/Page/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Page">Page</span>
+            <span class="post-date" title="2020-02-22 00:00:00">2020/02/22</span>
+        </a>
+        
+        <a  class=""
+           href="/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Serenity开发实践">Serenity开发实践</span>
+            <span class="post-date" title="2020-02-22 00:00:00">2020/02/22</span>
         </a>
         
         <a  class=""
@@ -173,14 +186,6 @@
            data-tag=""
            data-author="" >
             <span class="post-title" title="Sergen代码生成器">Sergen代码生成器</span>
-            <span class="post-date" title="2020-02-02 00:00:00">2020/02/02</span>
-        </a>
-        
-        <a  class=""
-           href="/SerenityMannual/2020/02/02/%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="开发步骤">开发步骤</span>
             <span class="post-date" title="2020-02-02 00:00:00">2020/02/02</span>
         </a>
         
@@ -193,10 +198,18 @@
         </a>
         
         <a  class=""
-           href="/SerenityMannual/2020/02/02/Jquery/%E6%97%A5%E6%9C%9F/"
+           href="/SerenityMannual/2020/02/02/%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="日期">日期</span>
+            <span class="post-title" title="开发步骤">开发步骤</span>
+            <span class="post-date" title="2020-02-02 00:00:00">2020/02/02</span>
+        </a>
+        
+        <a  class=""
+           href="/SerenityMannual/2020/02/02/Serenity%E4%BB%8B%E7%BB%8D/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Serenity介绍">Serenity介绍</span>
             <span class="post-date" title="2020-02-02 00:00:00">2020/02/02</span>
         </a>
         
@@ -209,19 +222,19 @@
         </a>
         
         <a  class=""
+           href="/SerenityMannual/2020/02/02/Jquery/%E6%97%A5%E6%9C%9F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="日期">日期</span>
+            <span class="post-date" title="2020-02-02 00:00:00">2020/02/02</span>
+        </a>
+        
+        <a  class=""
            href="/SerenityMannual/2020/02/04/React/React/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="React">React</span>
             <span class="post-date" title="2020-02-04 00:00:00">2020/02/04</span>
-        </a>
-        
-        <a  class=""
-           href="/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Serenity开发实践">Serenity开发实践</span>
-            <span class="post-date" title="2020-02-22 00:00:00">2020/02/22</span>
         </a>
         
     </nav>
@@ -286,18 +299,47 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><h4 id="枚举值显示名称"><a href="#枚举值显示名称" class="headerlink" title="枚举值显示名称"></a>枚举值显示名称</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Serenity.EnumFormatter.format(枚举类型, data.LastInspectionRule.InspectionModel)</span></span><br><span class="line">Serenity.EnumFormatter.format(Quality.Enum.InspectionModel, data.LastInspectionRule.InspectionModel)</span><br></pre></td></tr></table></figure>
+        <h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><h4 id="枚举值显示名称"><a href="#枚举值显示名称" class="headerlink" title="枚举值显示名称"></a>枚举值显示名称</h4><pre><code class="typescript">//Serenity.EnumFormatter.format(枚举类型, data.LastInspectionRule.InspectionModel)
+Serenity.EnumFormatter.format(Quality.Enum.InspectionModel, data.LastInspectionRule.InspectionModel)</code></pre>
+<h2 id="Lookup"><a href="#Lookup" class="headerlink" title="Lookup"></a>Lookup</h2><h3 id="获取Lookup，通过Id获取Lookup的Item"><a href="#获取Lookup，通过Id获取Lookup的Item" class="headerlink" title="获取Lookup，通过Id获取Lookup的Item"></a>获取Lookup，通过Id获取Lookup的Item</h3><pre><code class="typescript">Mom.Production.ProductionProblemRow.getLookup().itemById[this.form.ParentProdProblemId.value]</code></pre>
+<h3 id="单据流水号生成"><a href="#单据流水号生成" class="headerlink" title="单据流水号生成"></a>单据流水号生成</h3><pre><code class="c#"> protected override void SetInternalFields()
+            {
+                base.SetInternalFields();
+                if (IsCreate) Row.WorkcenterTaskId = Row.WorkcenterTaskId ?? Guid.NewGuid();
+                GetNextNumberResponse nextNumber = GetNextNumberHelper.GetNextNumber(Connection, new GetNextNumberRequest
+                {
+                    Length = 12,
+                    Prefix = &quot;SC&quot; + DateTime.Today.Year.ToString() + DateTime.Today.Month.ToString(&quot;00&quot;) + DateTime.Today.Date.ToString(&quot;00&quot;)
+                }, fld.WorkcenterTaskCode); ;
 
-<h2 id="Lookup"><a href="#Lookup" class="headerlink" title="Lookup"></a>Lookup</h2><h3 id="获取Lookup，通过Id获取Lookup的Item"><a href="#获取Lookup，通过Id获取Lookup的Item" class="headerlink" title="获取Lookup，通过Id获取Lookup的Item"></a>获取Lookup，通过Id获取Lookup的Item</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mom.Production.ProductionProblemRow.getLookup().itemById[<span class="keyword">this</span>.form.ParentProdProblemId.value]</span><br></pre></td></tr></table></figure>
-
-<h3 id="单据流水号生成"><a href="#单据流水号生成" class="headerlink" title="单据流水号生成"></a>单据流水号生成</h3><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">SetInternalFields</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>           &#123;</span><br><span class="line">               <span class="keyword">base</span>.SetInternalFields();</span><br><span class="line">               <span class="keyword">if</span> (IsCreate) Row.WorkcenterTaskId = Row.WorkcenterTaskId ?? Guid.NewGuid();</span><br><span class="line">               GetNextNumberResponse nextNumber = GetNextNumberHelper.GetNextNumber(Connection, <span class="keyword">new</span> GetNextNumberRequest</span><br><span class="line">               &#123;</span><br><span class="line">                   Length = <span class="number">12</span>,</span><br><span class="line">                   Prefix = <span class="string">"SC"</span> + DateTime.Today.Year.ToString() + DateTime.Today.Month.ToString(<span class="string">"00"</span>) + DateTime.Today.Date.ToString(<span class="string">"00"</span>)</span><br><span class="line">               &#125;, fld.WorkcenterTaskCode); ;</span><br><span class="line"></span><br><span class="line">               Row.WorkcenterTaskCode = nextNumber.Serial;</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="数据查询"><a href="#数据查询" class="headerlink" title="数据查询"></a>数据查询</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Production.ProductionProblemRecordService.List(&#123;</span><br><span class="line">                EqualityFilter: &#123;</span><br><span class="line">                    <span class="string">"WorkcenterTaskId"</span>: workcenterTaskId</span><br><span class="line">                &#125;,</span><br><span class="line">                IncludeColumns: [<span class="string">"ProdProblemProdProblemName"</span>]</span><br><span class="line">            &#125;, <span class="function"><span class="params">r</span> =&gt;</span> &#123;</span><br><span class="line">                    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">                        productionProblemRecords: r.Entities</span><br><span class="line">                    &#125;);</span><br><span class="line">            &#125;);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> onViewSubmit() &#123;</span><br><span class="line">            <span class="keyword">if</span> (!<span class="keyword">super</span>.onViewSubmit()) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">var</span> request = <span class="keyword">this</span>.view.params <span class="keyword">as</span> Serenity.ListRequest;</span><br><span class="line">            request.Criteria = Serenity.Criteria.and(request.Criteria,</span><br><span class="line">                [[ProductionProblemRecordRow.Fields.ProdProblemProdProblemCategory], <span class="string">'='</span>, Production.Enum.ProductionProblemCategory.Quality]);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ListResponse&lt;StorybookRow&gt; response = <span class="keyword">new</span> StorybookRepository().List(connection, <span class="keyword">new</span> ListRequest()</span><br><span class="line">                &#123;</span><br><span class="line">                    IncludeColumns = <span class="keyword">new</span> HashSet&lt;<span class="keyword">string</span>&gt;() &#123; <span class="string">"LastUpdateTime"</span> &#125;,</span><br><span class="line">                    Sort = <span class="keyword">new</span> SortBy[] &#123; <span class="keyword">new</span> SortBy(<span class="string">"Id"</span>, <span class="literal">true</span>) &#125;,</span><br><span class="line">                    EqualityFilter = <span class="keyword">new</span> Dictionary&lt;<span class="keyword">string</span>, <span class="keyword">object</span>&gt;() &#123; &#123; <span class="string">"IsActive"</span>, <span class="number">1</span> &#125; &#125;,</span><br><span class="line">                    Criteria = <span class="keyword">new</span> Criteria(<span class="string">"RootId"</span>) == <span class="keyword">new</span> Criteria(<span class="string">"Id"</span>)</span><br><span class="line">                &#125;);</span><br></pre></td></tr></table></figure>
-
+                Row.WorkcenterTaskCode = nextNumber.Serial;
+            }</code></pre>
+<h2 id="数据查询"><a href="#数据查询" class="headerlink" title="数据查询"></a>数据查询</h2><pre><code class="typescript">Production.ProductionProblemRecordService.List({
+                EqualityFilter: {
+                    &quot;WorkcenterTaskId&quot;: workcenterTaskId
+                },
+                IncludeColumns: [&quot;ProdProblemProdProblemName&quot;]
+            }, r =&gt; {
+                    this.setState({
+                        productionProblemRecords: r.Entities
+                    });
+            });</code></pre>
+<pre><code class="typescript">protected onViewSubmit() {
+            if (!super.onViewSubmit()) {
+                return false;
+            }
+            var request = this.view.params as Serenity.ListRequest;
+            request.Criteria = Serenity.Criteria.and(request.Criteria,
+                [[ProductionProblemRecordRow.Fields.ProdProblemProdProblemCategory], &#39;=&#39;, Production.Enum.ProductionProblemCategory.Quality]);
+            return true;
+        }</code></pre>
+<pre><code class="c#">ListResponse&lt;StorybookRow&gt; response = new StorybookRepository().List(connection, new ListRequest()
+                {
+                    IncludeColumns = new HashSet&lt;string&gt;() { &quot;LastUpdateTime&quot; },
+                    Sort = new SortBy[] { new SortBy(&quot;Id&quot;, true) },
+                    EqualityFilter = new Dictionary&lt;string, object&gt;() { { &quot;IsActive&quot;, 1 } },
+                    Criteria = new Criteria(&quot;RootId&quot;) == new Criteria(&quot;Id&quot;)
+                });</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
@@ -466,7 +508,7 @@
         border-right: 1px solid #C3CCD0;
         text-align: right;
         color: #AAA;
-        background-color: #fafafa;
+        background-color: ;
     }
     .pre-numbering.widther {
         width: 35px;
