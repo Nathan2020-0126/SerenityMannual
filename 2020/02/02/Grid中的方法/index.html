@@ -7,15 +7,15 @@
   
   <title>Grid中的方法 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="getButtons123456789101112protected getButtons(): Serenity.ToolButton[] &amp;#123;    var buttons &#x3D; super.getButtons();    buttons[Q.indexOf(buttons, x &#x3D;&gt; x.cssClass &#x3D;&#x3D; &quot;add-button&quot;)].title &#x3D; &quot;Insert Sa">
+  <meta name="description" content="getButtons1234567891011121314protected getButtons(): Serenity.ToolButton[] &amp;#123;    var buttons &#x3D; super.getButtons();    buttons[Q.indexOf(buttons, x &#x3D;&gt; x.cssClass &#x3D;&#x3D; &quot;add-button&quot;)].title &#x3D; &quot;Inser">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Grid中的方法">
 <meta property="og:url" content="https://nathan2020-0126.github.io/SerenityMannual/2020/02/02/Grid%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="getButtons123456789101112protected getButtons(): Serenity.ToolButton[] &amp;#123;    var buttons &#x3D; super.getButtons();    buttons[Q.indexOf(buttons, x &#x3D;&gt; x.cssClass &#x3D;&#x3D; &quot;add-button&quot;)].title &#x3D; &quot;Insert Sa">
+<meta property="og:description" content="getButtons1234567891011121314protected getButtons(): Serenity.ToolButton[] &amp;#123;    var buttons &#x3D; super.getButtons();    buttons[Q.indexOf(buttons, x &#x3D;&gt; x.cssClass &#x3D;&#x3D; &quot;add-button&quot;)].title &#x3D; &quot;Inser">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-02T02:32:38.049Z">
-<meta property="article:modified_time" content="2020-02-04T05:11:12.296Z">
+<meta property="article:modified_time" content="2020-02-21T00:35:00.583Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -88,15 +88,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="getButtons"><a href="#getButtons" class="headerlink" title="getButtons"></a>getButtons</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> getButtons(): Serenity.ToolButton[] &#123;</span><br><span class="line">    <span class="keyword">var</span> buttons = <span class="keyword">super</span>.getButtons();</span><br><span class="line">    buttons[Q.indexOf(buttons, <span class="function"><span class="params">x</span> =&gt;</span> x.cssClass == <span class="string">"add-button"</span>)].title = <span class="string">"Insert SalesOrder into monthly Plan"</span>;</span><br><span class="line">    buttons.splice(Q.indexOf(buttons, <span class="function"><span class="params">x</span> =&gt;</span> x.cssClass == <span class="string">"add-button"</span>), <span class="number">1</span>);</span><br><span class="line">    buttons.push(&#123;</span><br><span class="line">        title: <span class="string">'Save Changes'</span>,</span><br><span class="line">        cssClass: <span class="string">'apply-changes-button disabled'</span>,</span><br><span class="line">        onClick: <span class="function"><span class="params">e</span> =&gt;</span> <span class="keyword">this</span>.saveClick(),</span><br><span class="line">        separator: <span class="literal">true</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> buttons;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="getButtons"><a href="#getButtons" class="headerlink" title="getButtons"></a>getButtons</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> getButtons(): Serenity.ToolButton[] &#123;</span><br><span class="line">    <span class="keyword">var</span> buttons = <span class="keyword">super</span>.getButtons();</span><br><span class="line">    buttons[Q.indexOf(buttons, <span class="function"><span class="params">x</span> =&gt;</span> x.cssClass == <span class="string">"add-button"</span>)].title = <span class="string">"Insert SalesOrder into monthly Plan"</span>;</span><br><span class="line">   </span><br><span class="line">    <span class="comment">//移除新增按钮</span></span><br><span class="line">    buttons.splice(Q.indexOf(buttons, <span class="function"><span class="params">x</span> =&gt;</span> x.cssClass == <span class="string">"add-button"</span>), <span class="number">1</span>);</span><br><span class="line">    buttons.push(&#123;</span><br><span class="line">        title: <span class="string">'Save Changes'</span>,</span><br><span class="line">        cssClass: <span class="string">'apply-changes-button disabled'</span>,</span><br><span class="line">        onClick: <span class="function"><span class="params">e</span> =&gt;</span> <span class="keyword">this</span>.saveClick(),</span><br><span class="line">        separator: <span class="literal">true</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> buttons;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="去除Title"><a href="#去除Title" class="headerlink" title="去除Title"></a>去除Title</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constructor</span>(<span class="params">container: JQuery</span>) &#123;</span><br><span class="line">           <span class="keyword">super</span>(container);</span><br><span class="line">           <span class="keyword">this</span>.setTitle(<span class="string">""</span>);</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="去除Title"><a href="#去除Title" class="headerlink" title="去除Title"></a>去除Title</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">constructor</span>(<span class="params">container: JQuery</span>) &#123;</span><br><span class="line">            <span class="keyword">super</span>(container);</span><br><span class="line">            <span class="keyword">this</span>.setTitle(<span class="string">""</span>);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//或者下面这个方法</span></span><br><span class="line"><span class="keyword">protected</span> getInitialTitle() &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="EditItem"><a href="#EditItem" class="headerlink" title="EditItem"></a>EditItem</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">        * This method is called for columns with [EditLink] attribute,</span></span><br><span class="line"><span class="comment">        * but only for edit links of this grid's own item type.</span></span><br><span class="line"><span class="comment">        * It is also called by Add Product button with a NULL entityOrId</span></span><br><span class="line"><span class="comment">        * parameter so we should check that entityOrId is a string</span></span><br><span class="line"><span class="comment">        * to be sure it is originating from a link.</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * As we changed format for other columns, this will only be called</span></span><br><span class="line"><span class="comment">        * for links in remaining OrderID column</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       <span class="keyword">protected</span> editItem(entityOrId) &#123;</span><br><span class="line">           <span class="comment">// check that this is an edit link click, not add button, ID is always a string</span></span><br><span class="line">           <span class="keyword">if</span> (<span class="keyword">typeof</span> entityOrId == <span class="string">"string"</span>) &#123;</span><br><span class="line">               <span class="comment">// convert ID to an integer, and find order with that ID</span></span><br><span class="line">               <span class="keyword">var</span> item = <span class="keyword">this</span>.view.getItemById(Q.toId(entityOrId));</span><br><span class="line">               <span class="comment">// date is a ISO string, so need to parse it first</span></span><br><span class="line">               <span class="keyword">var</span> date = Q.formatDate(item.OrderDate);</span><br><span class="line"></span><br><span class="line">               <span class="comment">// ask for confirmation</span></span><br><span class="line">               Q.confirm(Q.format(<span class="string">"You clicked edit link for order with ID: &#123;0&#125; and Date: &#123;1&#125;. Should i open that order?"</span>,</span><br><span class="line">                   item.OrderID, date), <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                       <span class="keyword">new</span> Northwind.OrderDialog().loadByIdAndOpenDialog(item.OrderID);</span><br><span class="line">                   &#125;);</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">else</span> &#123;</span><br><span class="line">               <span class="keyword">super</span>.editItem(entityOrId);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="onViewSubmit"><a href="#onViewSubmit" class="headerlink" title="onViewSubmit"></a>onViewSubmit</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> onViewSubmit() &#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">super</span>.onViewSubmit()) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> request = <span class="keyword">this</span>.view.params <span class="keyword">as</span> Serenity.ListRequest;</span><br><span class="line">    request.Criteria = Serenity.Criteria.and(request.Criteria,</span><br><span class="line">                [[SalesMilestoneTaskStepRow.Fields.ReponsiblePersonUsername], <span class="string">'='</span>, Q.Authorization.username], [<span class="string">'is null'</span>, [SalesMilestoneTaskStepRow.Fields.ActualEndDate], [<span class="string">'is not null'</span>, [SalesMilestoneTaskStepRow.Fields.ActualStartDate]]);</span><br><span class="line">    request.IncludeColumns.push(<span class="string">"CurrentMilestoneTaskRespPersonUserId"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
+<h3 id="更新Dialog后自动刷新Grid"><a href="#更新Dialog后自动刷新Grid" class="headerlink" title="更新Dialog后自动刷新Grid"></a>更新Dialog后自动刷新Grid</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dlg = <span class="keyword">new</span> FourMChangeApproveDialog();</span><br><span class="line">    dlg.loadByIdAndOpenDialog(id);</span><br><span class="line">    Serenity.SubDialogHelper.bindToDataChange(dlg, <span class="keyword">this</span>, <span class="function">(<span class="params">e, dci</span>) =&gt;</span> &#123;</span><br><span class="line">    	<span class="keyword">this</span>.refresh();</span><br><span class="line">&#125;, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
 
 
 
@@ -113,7 +113,7 @@
     
 <nav id="article-nav">
   
-    <a href="/SerenityMannual/2020/02/04/React/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/SerenityMannual/2020/02/04/React/React/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -123,9 +123,9 @@
     </a>
   
   
-    <a href="/SerenityMannual/2020/02/02/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/SerenityMannual/2020/02/02/Serenity%E4%BB%8B%E7%BB%8D/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">Serenity介绍</div>
     </a>
   
 </nav>
@@ -162,7 +162,7 @@
       <ul>
         
           <li>
-            <a href="/SerenityMannual/2020/02/04/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/">图片测试</a>
+            <a href="/SerenityMannual/2020/02/05/Serenity%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">Serenity常用方法</a>
           </li>
         
           <li>
@@ -170,7 +170,7 @@
           </li>
         
           <li>
-            <a href="/SerenityMannual/2020/02/04/React/">React</a>
+            <a href="/SerenityMannual/2020/02/04/React/React/">React</a>
           </li>
         
           <li>
@@ -178,7 +178,7 @@
           </li>
         
           <li>
-            <a href="/SerenityMannual/2020/02/02/hello-world/">Hello World</a>
+            <a href="/SerenityMannual/2020/02/02/Serenity%E4%BB%8B%E7%BB%8D/">Serenity介绍</a>
           </li>
         
       </ul>
