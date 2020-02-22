@@ -2,1021 +2,542 @@
 <html>
 <head>
   <meta charset="utf-8">
-  
-
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://nathan2020-0126.github.io/SerenityMannual/index.html">
-<meta property="og:site_name" content="Hexo">
+  <title>Serenity</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Serenity">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="枚举枚举值显示名称12&#x2F;&#x2F;Serenity.EnumFormatter.format(枚举类型, data.LastInspectionRule.InspectionModel)Serenity.EnumFormatter.format(Quality.Enum.InspectionModel, data.LastInspectionRule.InspectionModel)  Lookup获取L">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Serenity常用方法">
+<meta property="og:url" content="https://nathan2020-0126.github.io/SerenityMannual/2020/02/05/Serenity%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="Serenity">
+<meta property="og:description" content="枚举枚举值显示名称12&#x2F;&#x2F;Serenity.EnumFormatter.format(枚举类型, data.LastInspectionRule.InspectionModel)Serenity.EnumFormatter.format(Quality.Enum.InspectionModel, data.LastInspectionRule.InspectionModel)  Lookup获取L">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="article:published_time" content="2020-02-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-02-18T08:49:16.450Z">
+<meta property="article:author" content="Nathan">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/SerenityMannual/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/SerenityMannual/css/style.css">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/SerenityMannual/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/SerenityMannual/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/SerenityMannual/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/SerenityMannual/js/iconfont.js?v=1.0.1" ></script>
 
 <meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="/SerenityMannual">
+</div>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/SerenityMannual/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/SerenityMannual/">Home</a>
-        
-          <a class="main-nav-link" href="/SerenityMannual/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/SerenityMannual/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://nathan2020-0126.github.io/SerenityMannual"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-Serenity常用方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/SerenityMannual/2020/02/05/Serenity%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" class="article-date">
-  <time datetime="2020-02-04T16:00:00.000Z" itemprop="datePublished">2020-02-05</time>
+<aside class="nav mobile">
+    <div class="nav-left">
+        <a href="/SerenityMannual/" class="avatar_target">
+    <img class="avatar" src="/SerenityMannual/img/avatar.jpg" />
 </a>
+<div class="author">
+    <span>Nathan</span>
+</div>
+
+<div class="icon">
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/SerenityMannual/2020/02/05/Serenity%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">Serenity常用方法</a>
-    </h1>
-  
-
-      </header>
+        <a title="email" href="mailto:113729396@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><h4 id="枚举值显示名称"><a href="#枚举值显示名称" class="headerlink" title="枚举值显示名称"></a>枚举值显示名称</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Serenity.EnumFormatter.format(枚举类型, data.LastInspectionRule.InspectionModel)</span></span><br><span class="line">Serenity.EnumFormatter.format(Quality.Enum.InspectionModel, data.LastInspectionRule.InspectionModel)</span><br></pre></td></tr></table></figure>
-
-<h2 id="Lookup"><a href="#Lookup" class="headerlink" title="Lookup"></a>Lookup</h2><h3 id="获取Lookup，通过Id获取Lookup的Item"><a href="#获取Lookup，通过Id获取Lookup的Item" class="headerlink" title="获取Lookup，通过Id获取Lookup的Item"></a>获取Lookup，通过Id获取Lookup的Item</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mom.Production.ProductionProblemRow.getLookup().itemById[<span class="keyword">this</span>.form.ParentProdProblemId.value]</span><br></pre></td></tr></table></figure>
-
-<h3 id="单据流水号生成"><a href="#单据流水号生成" class="headerlink" title="单据流水号生成"></a>单据流水号生成</h3><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">SetInternalFields</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>           &#123;</span><br><span class="line">               <span class="keyword">base</span>.SetInternalFields();</span><br><span class="line">               <span class="keyword">if</span> (IsCreate) Row.WorkcenterTaskId = Row.WorkcenterTaskId ?? Guid.NewGuid();</span><br><span class="line">               GetNextNumberResponse nextNumber = GetNextNumberHelper.GetNextNumber(Connection, <span class="keyword">new</span> GetNextNumberRequest</span><br><span class="line">               &#123;</span><br><span class="line">                   Length = <span class="number">12</span>,</span><br><span class="line">                   Prefix = <span class="string">"SC"</span> + DateTime.Today.Year.ToString() + DateTime.Today.Month.ToString(<span class="string">"00"</span>) + DateTime.Today.Date.ToString(<span class="string">"00"</span>)</span><br><span class="line">               &#125;, fld.WorkcenterTaskCode); ;</span><br><span class="line"></span><br><span class="line">               Row.WorkcenterTaskCode = nextNumber.Serial;</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="数据查询"><a href="#数据查询" class="headerlink" title="数据查询"></a>数据查询</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Production.ProductionProblemRecordService.List(&#123;</span><br><span class="line">                EqualityFilter: &#123;</span><br><span class="line">                    <span class="string">"WorkcenterTaskId"</span>: workcenterTaskId</span><br><span class="line">                &#125;,</span><br><span class="line">                IncludeColumns: [<span class="string">"ProdProblemProdProblemName"</span>]</span><br><span class="line">            &#125;, <span class="function"><span class="params">r</span> =&gt;</span> &#123;</span><br><span class="line">                    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">                        productionProblemRecords: r.Entities</span><br><span class="line">                    &#125;);</span><br><span class="line">            &#125;);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> onViewSubmit() &#123;</span><br><span class="line">            <span class="keyword">if</span> (!<span class="keyword">super</span>.onViewSubmit()) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">var</span> request = <span class="keyword">this</span>.view.params <span class="keyword">as</span> Serenity.ListRequest;</span><br><span class="line">            request.Criteria = Serenity.Criteria.and(request.Criteria,</span><br><span class="line">                [[ProductionProblemRecordRow.Fields.ProdProblemProdProblemCategory], <span class="string">'='</span>, Production.Enum.ProductionProblemCategory.Quality]);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ListResponse&lt;StorybookRow&gt; response = <span class="keyword">new</span> StorybookRepository().List(connection, <span class="keyword">new</span> ListRequest()</span><br><span class="line">                &#123;</span><br><span class="line">                    IncludeColumns = <span class="keyword">new</span> HashSet&lt;<span class="keyword">string</span>&gt;() &#123; <span class="string">"LastUpdateTime"</span> &#125;,</span><br><span class="line">                    Sort = <span class="keyword">new</span> SortBy[] &#123; <span class="keyword">new</span> SortBy(<span class="string">"Id"</span>, <span class="literal">true</span>) &#125;,</span><br><span class="line">                    EqualityFilter = <span class="keyword">new</span> Dictionary&lt;<span class="keyword">string</span>, <span class="keyword">object</span>&gt;() &#123; &#123; <span class="string">"IsActive"</span>, <span class="number">1</span> &#125; &#125;,</span><br><span class="line">                    Criteria = <span class="keyword">new</span> Criteria(<span class="string">"RootId"</span>) == <span class="keyword">new</span> Criteria(<span class="string">"Id"</span>)</span><br><span class="line">                &#125;);</span><br></pre></td></tr></table></figure>
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=113729396&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
 
 
-      
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(9)</small></div></li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
     </div>
-    <footer class="article-footer">
-      <a data-url="https://nathan2020-0126.github.io/SerenityMannual/2020/02/05/Serenity%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" data-id="ck6wvusbf00014wtp3o2q5956" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+    <div><a  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="9">
 
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
 
-  
-    <article id="post-Dialog中的方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/SerenityMannual/2020/02/04/Dialog%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/" class="article-date">
-  <time datetime="2020-02-03T16:00:00.000Z" itemprop="datePublished">2020-02-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/SerenityMannual/2020/02/04/Dialog%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/">Dialog中的方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="修改Dialog-Title"><a href="#修改Dialog-Title" class="headerlink" title="修改Dialog Title"></a>修改Dialog Title</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.dialogTitle = <span class="string">"A form with static text blocks"</span>;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a><strong>构造函数</strong></h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constructor</span>(<span class="params">container: JQuery</span>) &#123;</span><br><span class="line">            <span class="keyword">super</span>(container);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">this</span>.adjustLineGrid = <span class="keyword">new</span> AdjustLineGrid(<span class="keyword">this</span>.byId(<span class="string">'InventoryAdjustGrid'</span>));</span><br><span class="line">            <span class="keyword">this</span>.adjustLineGrid.element.flexHeightOnly(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">this</span>.form.InventoryAdjustTypeId.changeSelect2(<span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">this</span>.form.InventoryAdjustTypeId.value == <span class="string">"1"</span>) &#123;</span><br><span class="line">                    $(<span class="string">".s-InventoryAdjustDialog"</span>).find(<span class="string">".field.StockLocationId"</span>).show();</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    $(<span class="string">".s-InventoryAdjustDialog"</span>).find(<span class="string">".field.StockLocationId"</span>).hide();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="LoadEntity"><a href="#LoadEntity" class="headerlink" title="LoadEntity"></a><strong>LoadEntity</strong></h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">loadEntity(entity: InventoryAdjustRow) &#123;</span><br><span class="line">            <span class="keyword">super</span>.loadEntity(entity);</span><br><span class="line">            <span class="keyword">var</span> self = <span class="keyword">this</span>;</span><br><span class="line">            <span class="keyword">if</span> (entity.InventoryAdjustTypeId == <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>.element.find(<span class="string">".field.StockLocationId"</span>).show();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (!self.isNew()) &#123;</span><br><span class="line">                <span class="keyword">if</span> (entity.InventoryStatusId == <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">this</span>.element.find(<span class="string">".tool-button.confirm-button"</span>).removeClass(<span class="string">"hide"</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (!<span class="keyword">this</span>.element.find(<span class="string">".tool-button.confirm-button"</span>).hasClass(<span class="string">"hide"</span>)) &#123;</span><br><span class="line">                        <span class="keyword">this</span>.element.find(<span class="string">".tool-button.confirm-button"</span>).addClass(<span class="string">"hide"</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                    Serenity.EditorUtils.setReadonly(<span class="keyword">this</span>.element.find(<span class="string">'.editor'</span>), <span class="literal">true</span>);</span><br><span class="line">                    </span><br><span class="line">                    self.saveAndCloseButton.hide();</span><br><span class="line">                    self.applyChangesButton.hide();</span><br><span class="line">                &#125;               </span><br><span class="line">                <span class="keyword">if</span> (entity.InventoryStatusId == <span class="number">3</span>) &#123;</span><br><span class="line">                    <span class="keyword">this</span>.element.find(<span class="string">".s-DialogToolbar"</span>).addClass(<span class="string">"hide"</span>);                 </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            Serenity.TabsExtensions.setDisabled(<span class="keyword">this</span>.tabs, <span class="string">'Orders'</span>, <span class="keyword">this</span>.entity.InventoryStatusId == <span class="number">0</span>);</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.entity.InventoryStatusId &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                Serenity.TabsExtensions.selectTab(<span class="keyword">this</span>.tabs, <span class="string">'Orders'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">this</span>.adjustLineGrid.inventoryEntity = entity;</span><br><span class="line">            <span class="keyword">this</span>.adjustLineGrid.myCallback = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                self.reloadById();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="加入Button"><a href="#加入Button" class="headerlink" title="加入Button"></a><strong>加入Button</strong></h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> getToolbarButtons(): Serenity.ToolButton[] &#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">let</span> buttons = <span class="keyword">super</span>.getToolbarButtons();</span><br><span class="line">            <span class="keyword">var</span> self = <span class="keyword">this</span>;</span><br><span class="line">            buttons.push(&#123;</span><br><span class="line">                title: Q.text(<span class="string">"Db.Stock.InventoryAdjust.StartInventory"</span>),</span><br><span class="line">                cssClass: <span class="string">'confirm-button hide'</span>,              </span><br><span class="line">                onClick: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (self.entity.InventoryAdjustTypeId == <span class="number">1</span>)<span class="comment">//AllProductOfOneLocation</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        self.creatInventoryLineByLocationId(<span class="keyword">this</span>.entityId, <span class="keyword">this</span>.entity.StockLocationId);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        self.setInventoryAdjustStatus(<span class="keyword">this</span>.entityId, <span class="number">1</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                    </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);         </span><br><span class="line">            <span class="keyword">return</span> buttons;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="增加表单验证"><a href="#增加表单验证" class="headerlink" title="增加表单验证"></a>增加表单验证</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.form.Password.addValidationRule(<span class="keyword">this</span>.uniqueName, <span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">this</span>.form.Password.value.length &lt; <span class="number">7</span>)</span><br><span class="line">                    <span class="keyword">return</span> <span class="string">"Password must be at least 7 characters!"</span>;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">this</span>.form.PasswordConfirm.addValidationRule(<span class="keyword">this</span>.uniqueName, <span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">this</span>.form.Password.value != <span class="keyword">this</span>.form.PasswordConfirm.value)</span><br><span class="line">                    <span class="keyword">return</span> <span class="string">"The passwords entered doesn't match!"</span>;</span><br><span class="line">            &#125;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="Dialog设置只读模式"><a href="#Dialog设置只读模式" class="headerlink" title="Dialog设置只读模式"></a>Dialog设置只读模式</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> updateInterface(): <span class="built_in">void</span> &#123;</span><br><span class="line">            <span class="keyword">super</span>.updateInterface();</span><br><span class="line">            Serenity.EditorUtils.setReadonly(<span class="keyword">this</span>.element.find(<span class="string">'.editor'</span>), <span class="literal">true</span>);</span><br><span class="line">            <span class="keyword">this</span>.element.find(<span class="string">'sup'</span>).hide();</span><br><span class="line">            <span class="keyword">this</span>.toolbar.element.hide();</span><br><span class="line">             <span class="keyword">this</span>.element.find(<span class="string">".add-button"</span>).remove();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="getDialogOptions"><a href="#getDialogOptions" class="headerlink" title="getDialogOptions"></a>getDialogOptions</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> getDialogOptions(): JQueryUI.DialogOptions &#123;</span><br><span class="line">            <span class="keyword">let</span> opt = <span class="keyword">super</span>.getDialogOptions();</span><br><span class="line">            opt.height = <span class="number">800</span>;</span><br><span class="line">            opt.width = <span class="number">500</span>;</span><br><span class="line">            <span class="keyword">return</span> opt;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> DialogOptions <span class="keyword">extends</span> DialogEvents &#123;</span><br><span class="line">        autoOpen?: <span class="built_in">boolean</span>;</span><br><span class="line">        buttons?: &#123; [buttonText: <span class="built_in">string</span>]: <span class="function">(<span class="params">event?: Event</span>) =&gt;</span> <span class="built_in">void</span> &#125; | DialogButtonOptions[];</span><br><span class="line">        closeOnEscape?: <span class="built_in">boolean</span>;</span><br><span class="line">        classes?: DialogClasses;</span><br><span class="line">        closeText?: <span class="built_in">string</span>;</span><br><span class="line">        appendTo?: <span class="built_in">string</span>;</span><br><span class="line">        dialogClass?: <span class="built_in">string</span>;</span><br><span class="line">        disabled?: <span class="built_in">boolean</span>;</span><br><span class="line">        draggable?: <span class="built_in">boolean</span>;</span><br><span class="line">        height?: <span class="built_in">number</span> | <span class="built_in">string</span>;</span><br><span class="line">        hide?: <span class="built_in">boolean</span> | <span class="built_in">number</span> | <span class="built_in">string</span> | DialogShowHideOptions;</span><br><span class="line">        maxHeight?: <span class="built_in">number</span>;</span><br><span class="line">        maxWidth?: <span class="built_in">number</span>;</span><br><span class="line">        minHeight?: <span class="built_in">number</span>;</span><br><span class="line">        minWidth?: <span class="built_in">number</span>;</span><br><span class="line">        modal?: <span class="built_in">boolean</span>;</span><br><span class="line">        position?: <span class="built_in">any</span>; <span class="comment">// object, string or []</span></span><br><span class="line">        resizable?: <span class="built_in">boolean</span>;</span><br><span class="line">        show?: <span class="built_in">boolean</span> | <span class="built_in">number</span> | <span class="built_in">string</span> | DialogShowHideOptions;</span><br><span class="line">        stack?: <span class="built_in">boolean</span>;</span><br><span class="line">        title?: <span class="built_in">string</span>;</span><br><span class="line">        width?: <span class="built_in">any</span>; <span class="comment">// number or string</span></span><br><span class="line">        zIndex?: <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line">		open?: DialogEvent;</span><br><span class="line">        close?: DialogEvent;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="设置RowEditor的高度"><a href="#设置RowEditor的高度" class="headerlink" title="设置RowEditor的高度"></a>设置RowEditor的高度</h3><h3 id="增加Editor备注信息"><a href="#增加Editor备注信息" class="headerlink" title="增加Editor备注信息"></a>增加Editor备注信息</h3><h3 id="字段的宽度设置"><a href="#字段的宽度设置" class="headerlink" title="字段的宽度设置"></a>字段的宽度设置</h3><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MeetingForm</span></span><br><span class="line">   &#123;</span><br><span class="line">       <span class="keyword">public</span> String MeetingName &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">       [<span class="meta">HalfWidth(UntilNext = true)</span>] <span class="comment">//引用此特性直到RestFormWith特性之前</span></span><br><span class="line">       <span class="keyword">public</span> Int32 MeetingTypeId &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">       <span class="keyword">public</span> String MeetingNumber &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">       [<span class="meta">DefaultValue(<span class="meta-string">"now"</span>)</span>]</span><br><span class="line">       <span class="keyword">public</span> DateTime StartDate &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">       [<span class="meta">DefaultValue(<span class="meta-string">"now"</span>)</span>]</span><br><span class="line">       <span class="keyword">public</span> DateTime EndDate &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">       <span class="keyword">public</span> Int32 LocationId &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">       <span class="keyword">public</span> Int32 UnitId &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">       <span class="keyword">public</span> Int32 OrganizerContactId &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">       <span class="keyword">public</span> Int32 ReporterContactId &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">       [<span class="meta">ResetFormWidth</span>]</span><br><span class="line">       <span class="keyword">public</span> List&lt;MeetingAttendeeRow&gt; AttendeeList &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="https://nathan2020-0126.github.io/SerenityMannual/2020/02/04/Dialog%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/" data-id="ck67uk6a60000kotp0a0eeaxw" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-React/React" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/SerenityMannual/2020/02/04/React/React/" class="article-date">
-  <time datetime="2020-02-03T16:00:00.000Z" itemprop="datePublished">2020-02-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/SerenityMannual/2020/02/04/React/React/">React</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="组件生命周期"><a href="#组件生命周期" class="headerlink" title="组件生命周期"></a>组件生命周期</h3><p><img src="http://aliyunzixunbucket.oss-cn-beijing.aliyuncs.com/jpg/fb9443b4a481ef9082b1160ea1ff3c2c.jpg?x-oss-process=image/resize,p_100/auto-orient,1/quality,q_90/format,jpg/watermark,image_eXVuY2VzaGk=,t_100" alt="http://aliyunzixunbucket.oss-cn-beijing.aliyuncs.com/jpg/fb9443b4a481ef9082b1160ea1ff3c2c.jpg?x-oss-process=image/resize,p_100/auto-orient,1/quality,q_90/format,jpg/watermark,image_eXVuY2VzaGk=,t_100"></p>
-<h2 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h2><h3 id="元素条件"><a href="#元素条件" class="headerlink" title="元素条件"></a>元素条件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Mailbox</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> unreadMessages = props.unreadMessages;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;Hello!&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">      &#123;unreadMessages.length &gt; 0 &amp;&amp;</span></span><br><span class="line"><span class="regexp">        &lt;h2&gt;</span></span><br><span class="line"><span class="regexp">          您有 &#123;unreadMessages.length&#125; 条未读信息。</span></span><br><span class="line"><span class="regexp">        &lt;/</span>h2&gt;</span><br><span class="line">      &#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"> </span></span><br><span class="line"><span class="regexp">const messages = ['React', 'Re: React', 'Re:Re: React'];</span></span><br><span class="line"><span class="regexp">ReactDOM.render(</span></span><br><span class="line"><span class="regexp">  &lt;Mailbox unreadMessages=&#123;messages&#125; /</span>&gt;,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'example'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h3 id="三目运算符"><a href="#三目运算符" class="headerlink" title="三目运算符"></a>三目运算符</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">  <span class="keyword">const</span> isLoggedIn = <span class="keyword">this</span>.state.isLoggedIn;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &#123;isLoggedIn ? (</span><br><span class="line">        &lt;LogoutButton onClick=&#123;<span class="keyword">this</span>.handleLogoutClick&#125; /&gt;</span><br><span class="line">      ) : (</span><br><span class="line">        &lt;LoginButton onClick=&#123;<span class="keyword">this</span>.handleLoginClick&#125; /&gt;</span><br><span class="line">      )&#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="循环渲染"><a href="#循环渲染" class="headerlink" title="循环渲染"></a>循环渲染</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;data.FirstInspectionRule.InspRuleControlPoints.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">                                                <span class="keyword">return</span> &lt;div className=<span class="string">"col-md-12"</span>&gt;</span><br><span class="line">                                                        &lt;span key=&#123;index&#125; className=<span class="string">"text-muted form-label"</span> style=&#123;&#123; marginLeft: <span class="string">"5px"</span> &#125;&#125;&gt;控制点&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">                                                        &lt;span key=&#123;index&#125; className="form-value"&gt;&#123;item.QualityControlPointQualityControlPointName&#125; &lt;/</span>span&gt;</span><br><span class="line">                                                        &lt;span key=&#123;index&#125; className=<span class="string">"text-muted form-label"</span> style=&#123;&#123; marginLeft: <span class="string">"5px"</span> &#125;&#125;&gt;基准值&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">                                                        &lt;span key=&#123;index&#125; className="form-value"&gt;&#123;item.ReferenceValue&#125; &#123;item.ReferenceValueUnit&#125;&lt;/</span>span&gt;</span><br><span class="line">                                                        &lt;span key=&#123;index&#125; className=<span class="string">"form-value"</span>&gt;(&#123;item.ReferenceValueLowLimit&#125; - &#123;item.ReferenceValueUpLimit&#125;)&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">                                                        &lt;span key=&#123;index&#125; className="text-muted form-label" style=&#123;&#123; marginLeft: "5px" &#125;&#125;&gt;量检具&lt;/</span>span&gt;</span><br><span class="line">                                                        &lt;span key=&#123;index&#125; className=<span class="string">"form-value"</span>&gt;&#123;item.GaugeGaugeName&#125;&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">                                                    &lt;/</span>div&gt;</span><br><span class="line">                                                &#125;)&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="For循环"><a href="#For循环" class="headerlink" title="For循环"></a>For循环</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> createInputs(count: <span class="built_in">number</span>) &#123;</span><br><span class="line">            <span class="keyword">let</span> inputs = [];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</span><br><span class="line">                inputs.push(&lt;input <span class="keyword">type</span>=<span class="string">"text"</span> placeholder=&#123;(i + <span class="number">1</span>).toString()&#125; /&gt;)</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> inputs;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-
-      
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
     </div>
-    <footer class="article-footer">
-      <a data-url="https://nathan2020-0126.github.io/SerenityMannual/2020/02/04/React/React/" data-id="ck6wvusbi00024wtpdzqk8fwx" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Grid中的方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/SerenityMannual/2020/02/02/Grid%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/" class="article-date">
-  <time datetime="2020-02-02T02:32:38.049Z" itemprop="datePublished">2020-02-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/SerenityMannual/2020/02/02/Grid%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/">Grid中的方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="getButtons"><a href="#getButtons" class="headerlink" title="getButtons"></a>getButtons</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> getButtons(): Serenity.ToolButton[] &#123;</span><br><span class="line">    <span class="keyword">var</span> buttons = <span class="keyword">super</span>.getButtons();</span><br><span class="line">    buttons[Q.indexOf(buttons, <span class="function"><span class="params">x</span> =&gt;</span> x.cssClass == <span class="string">"add-button"</span>)].title = <span class="string">"Insert SalesOrder into monthly Plan"</span>;</span><br><span class="line">   </span><br><span class="line">    <span class="comment">//移除新增按钮</span></span><br><span class="line">    buttons.splice(Q.indexOf(buttons, <span class="function"><span class="params">x</span> =&gt;</span> x.cssClass == <span class="string">"add-button"</span>), <span class="number">1</span>);</span><br><span class="line">    buttons.push(&#123;</span><br><span class="line">        title: <span class="string">'Save Changes'</span>,</span><br><span class="line">        cssClass: <span class="string">'apply-changes-button disabled'</span>,</span><br><span class="line">        onClick: <span class="function"><span class="params">e</span> =&gt;</span> <span class="keyword">this</span>.saveClick(),</span><br><span class="line">        separator: <span class="literal">true</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> buttons;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="去除Title"><a href="#去除Title" class="headerlink" title="去除Title"></a>去除Title</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">constructor</span>(<span class="params">container: JQuery</span>) &#123;</span><br><span class="line">            <span class="keyword">super</span>(container);</span><br><span class="line">            <span class="keyword">this</span>.setTitle(<span class="string">""</span>);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//或者下面这个方法</span></span><br><span class="line"><span class="keyword">protected</span> getInitialTitle() &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="EditItem"><a href="#EditItem" class="headerlink" title="EditItem"></a>EditItem</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">        * This method is called for columns with [EditLink] attribute,</span></span><br><span class="line"><span class="comment">        * but only for edit links of this grid's own item type.</span></span><br><span class="line"><span class="comment">        * It is also called by Add Product button with a NULL entityOrId</span></span><br><span class="line"><span class="comment">        * parameter so we should check that entityOrId is a string</span></span><br><span class="line"><span class="comment">        * to be sure it is originating from a link.</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * As we changed format for other columns, this will only be called</span></span><br><span class="line"><span class="comment">        * for links in remaining OrderID column</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       <span class="keyword">protected</span> editItem(entityOrId) &#123;</span><br><span class="line">           <span class="comment">// check that this is an edit link click, not add button, ID is always a string</span></span><br><span class="line">           <span class="keyword">if</span> (<span class="keyword">typeof</span> entityOrId == <span class="string">"string"</span>) &#123;</span><br><span class="line">               <span class="comment">// convert ID to an integer, and find order with that ID</span></span><br><span class="line">               <span class="keyword">var</span> item = <span class="keyword">this</span>.view.getItemById(Q.toId(entityOrId));</span><br><span class="line">               <span class="comment">// date is a ISO string, so need to parse it first</span></span><br><span class="line">               <span class="keyword">var</span> date = Q.formatDate(item.OrderDate);</span><br><span class="line"></span><br><span class="line">               <span class="comment">// ask for confirmation</span></span><br><span class="line">               Q.confirm(Q.format(<span class="string">"You clicked edit link for order with ID: &#123;0&#125; and Date: &#123;1&#125;. Should i open that order?"</span>,</span><br><span class="line">                   item.OrderID, date), <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                       <span class="keyword">new</span> Northwind.OrderDialog().loadByIdAndOpenDialog(item.OrderID);</span><br><span class="line">                   &#125;);</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">else</span> &#123;</span><br><span class="line">               <span class="keyword">super</span>.editItem(entityOrId);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="onViewSubmit"><a href="#onViewSubmit" class="headerlink" title="onViewSubmit"></a>onViewSubmit</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> onViewSubmit() &#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">super</span>.onViewSubmit()) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> request = <span class="keyword">this</span>.view.params <span class="keyword">as</span> Serenity.ListRequest;</span><br><span class="line">    request.Criteria = Serenity.Criteria.and(request.Criteria,</span><br><span class="line">                [[SalesMilestoneTaskStepRow.Fields.ReponsiblePersonUsername], <span class="string">'='</span>, Q.Authorization.username], [<span class="string">'is null'</span>, [SalesMilestoneTaskStepRow.Fields.ActualEndDate], [<span class="string">'is not null'</span>, [SalesMilestoneTaskStepRow.Fields.ActualStartDate]]);</span><br><span class="line">    request.IncludeColumns.push(<span class="string">"CurrentMilestoneTaskRespPersonUserId"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="更新Dialog后自动刷新Grid"><a href="#更新Dialog后自动刷新Grid" class="headerlink" title="更新Dialog后自动刷新Grid"></a>更新Dialog后自动刷新Grid</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dlg = <span class="keyword">new</span> FourMChangeApproveDialog();</span><br><span class="line">    dlg.loadByIdAndOpenDialog(id);</span><br><span class="line">    Serenity.SubDialogHelper.bindToDataChange(dlg, <span class="keyword">this</span>, <span class="function">(<span class="params">e, dci</span>) =&gt;</span> &#123;</span><br><span class="line">    	<span class="keyword">this</span>.refresh();</span><br><span class="line">&#125;, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
-
-
-
-
-      
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
     </div>
-    <footer class="article-footer">
-      <a data-url="https://nathan2020-0126.github.io/SerenityMannual/2020/02/02/Grid%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/" data-id="ck67uk6ae0001kotp09z8gdcu" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <div class="clearfix"></div>
+</div>
 
-
-  
-    <article id="post-Serenity介绍" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/SerenityMannual/2020/02/02/Serenity%E4%BB%8B%E7%BB%8D/" class="article-date">
-  <time datetime="2020-02-01T16:00:00.000Z" itemprop="datePublished">2020-02-02</time>
-</a>
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <nav id="title-list-nav">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/SerenityMannual/2020/02/02/Serenity%E4%BB%8B%E7%BB%8D/">Serenity介绍</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Serenity框架介绍"><a href="#Serenity框架介绍" class="headerlink" title="Serenity框架介绍"></a>Serenity框架介绍</h1><p><strong>·</strong> <strong>什么是**</strong>Serenity平台？**</p>
-<p>Serenity 是建立在开源技术上的 ASP.NET MVC/Javascript 应用程序平台。</p>
-<p><strong>·</strong> <strong>谁适合使用该平台？</strong></p>
-<p>Serenity   最适合应用于有大量数据输入的表单业务应用程序，它的功能同样也适用于其他类型的Web应用程序。</p>
-<p><strong>·</strong> <strong>示例程序</strong></p>
-<p>Visual Studio 搜索模板 Serenity，里面包含Demo。</p>
-<p>教程中Github下载 MovieTutorial，建议参考教程理解代码</p>
-<p><strong>·</strong> <strong>目录结构</strong>——与ASP.NET MVC的主要文件夹结构进行对比</p>
-<table>
-<thead>
-<tr>
-<th><strong>ASP.NET MVC</strong></th>
-<th><strong>Serenity</strong></th>
-<th><strong>描述</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>APP_Data</td>
-<td></td>
-<td>存储应用程序数据</td>
-</tr>
-<tr>
-<td>APP_Start</td>
-<td></td>
-<td>配置文件</td>
-</tr>
-<tr>
-<td>Content</td>
-<td></td>
-<td>静态资源文件</td>
-</tr>
-<tr>
-<td>Fonts</td>
-<td></td>
-<td>字体文件</td>
-</tr>
-<tr>
-<td>Scripts</td>
-<td></td>
-<td>脚本文件</td>
-</tr>
-<tr>
-<td>Views</td>
-<td></td>
-<td>视图层（Serenity仅为视图模板）</td>
-</tr>
-<tr>
-<td>Controllers</td>
-<td>-</td>
-<td>控制器</td>
-</tr>
-<tr>
-<td>Models</td>
-<td>-</td>
-<td>模型</td>
-</tr>
-<tr>
-<td>-</td>
-<td>Modules</td>
-<td>MVC架构的模块代码</td>
-</tr>
-<tr>
-<td>-</td>
-<td>tools</td>
-<td>工具如NodeJS</td>
-</tr>
-<tr>
-<td><strong>-</strong></td>
-<td>Imports/ Migrations等</td>
-<td>这些文件夹也可以归于Modules/Common文件夹中</td>
-</tr>
-</tbody></table>
-<p><strong>·</strong> <strong>Serenity中的Modules目录结构</strong></p>
-<table>
-<thead>
-<tr>
-<th><strong>文件/目录</strong></th>
-<th><strong>文件/子目录</strong></th>
-<th><strong>描述</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>_ViewStart.cshtml</td>
-<td>-</td>
-<td>母版页</td>
-</tr>
-<tr>
-<td>Texts.cs</td>
-<td>-</td>
-<td>C#端的文本资源</td>
-</tr>
-<tr>
-<td>Web.config</td>
-<td>-</td>
-<td>配置文件</td>
-</tr>
-<tr>
-<td>Common</td>
-<td>-</td>
-<td>公共文件目录</td>
-</tr>
-<tr>
-<td></td>
-<td>ScriptInitialization.ts</td>
-<td>全局JS初始化配置</td>
-</tr>
-<tr>
-<td></td>
-<td>Imports</td>
-<td>TT模板文件（用于TS智能提示）</td>
-</tr>
-<tr>
-<td></td>
-<td>Migrations</td>
-<td>数据库迁移文件（类似EF Code First）</td>
-</tr>
-<tr>
-<td></td>
-<td>Navigation</td>
-<td>页面导航信息</td>
-</tr>
-<tr>
-<td></td>
-<td>Helpers</td>
-<td>辅助类</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Reporting</th>
-<th>导出类</th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td>File</td>
-<td>下载类</td>
-</tr>
-<tr>
-<td></td>
-<td>UserPreference</td>
-<td>用户配置信息相关</td>
-</tr>
-<tr>
-<td></td>
-<td>Dashboard</td>
-<td>登陆首页仪表板</td>
-</tr>
-<tr>
-<td>各个业务模块</td>
-<td>实体（文件夹）*</td>
-<td>实体对应数据表名</td>
-</tr>
-<tr>
-<td></td>
-<td>实体Row.cs*</td>
-<td>M层 对应数据表字段</td>
-</tr>
-<tr>
-<td></td>
-<td>实体Repository.cs*</td>
-<td>M层 存储仓库存储过程</td>
-</tr>
-<tr>
-<td></td>
-<td>实体Index.cshtml*</td>
-<td>V层 业务页面</td>
-</tr>
-<tr>
-<td></td>
-<td>实体Grid.ts*</td>
-<td>V层 表格样式，一般用来控制与展示查询</td>
-</tr>
-<tr>
-<td></td>
-<td>实体Dialog.ts*</td>
-<td>V层 模态框样式，一般用来展示增删改表单。也可以是自定义模态框。</td>
-</tr>
-<tr>
-<td></td>
-<td>实体Page.cs*</td>
-<td>C层 即Controller一般用于响应前端http访问请求，调用cshtml页面</td>
-</tr>
-<tr>
-<td></td>
-<td>实体Endpoint.cs*</td>
-<td>C层 即Controller一般用于响应前端AJAX通讯请求，返回数据</td>
-</tr>
-<tr>
-<td></td>
-<td>实体Columns.cs*</td>
-<td>C层 用来控制表格显示</td>
-</tr>
-<tr>
-<td></td>
-<td>实体Forms.cs*</td>
-<td>C层 用来控制表单显示</td>
-</tr>
-<tr>
-<td></td>
-<td>其它</td>
-<td>C层其它类，用于辅助格式转换，文件导入导出等</td>
-</tr>
-</tbody></table>
-<p>说明：</p>
-<p>带*号为sergen自动生成代码，可以更具需要删减或增加各业务模块的代码，如有复杂的交互功能，需要增加C层代码，   如不需要相关页面，可以删减VC层代码。</p>
-<p><strong>·</strong> <strong>一些常用的特性（待补充）</strong></p>
-<table>
-<thead>
-<tr>
-<th><strong>C#【特性】</strong></th>
-<th><strong>类别</strong></th>
-<th><strong>说明</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>[NotNull]</td>
-<td>数据库</td>
-<td>字段不为空</td>
-</tr>
-<tr>
-<td>[DefaultValue(…)]</td>
-<td>数据库</td>
-<td>默认值</td>
-</tr>
-<tr>
-<td>[ForeignKey(“db”, “key”)]</td>
-<td>数据库</td>
-<td>指定外键</td>
-</tr>
-<tr>
-<td>[LeftJoin(“…”)]</td>
-<td>数据库</td>
-<td>左连接查询，括号中指定关联表代号</td>
-</tr>
-<tr>
-<td>[Expression(“…”)]</td>
-<td>数据库</td>
-<td>SQL表达式，本表用T0表示，关联表用对应的代号，表示该值为 服务端计算的值</td>
-</tr>
-<tr>
-<td>[LinkingSetRelation(typeof(…),”…”,”…”)]</td>
-<td>数据库</td>
-<td>两个表是一对多关系，1）映射行的类型，2）匹配该行的属性 名，3）该行中关联的字段属性名称</td>
-</tr>
-<tr>
-<td>[DisplayName(“…”)]</td>
-<td>UI全局</td>
-<td>UI显示的信息</td>
-</tr>
-<tr>
-<td>[Size(…)]</td>
-<td>UI表格</td>
-<td>表格中列的宽度</td>
-</tr>
-<tr>
-<td>[QuickSearch( SearchType.StartsWith/Equals/…)]</td>
-<td>UI表格</td>
-<td>表格顶部快速搜索，括号内主要是比对规则，可省略</td>
-</tr>
-<tr>
-<td>[QuickFilter]</td>
-<td>UI表格</td>
-<td>表格的快速过滤器</td>
-</tr>
-<tr>
-<td>[AlignRight/Left/…]</td>
-<td>UI表格</td>
-<td>对齐方式</td>
-</tr>
-<tr>
-<td>[TextAreaEditor(Rows=…)]</td>
-<td>UI表单</td>
-<td>表单用多行输入框</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>[LookupEditor(typeof(…), InplaceAdd=true,Mupltiple=true…)]</th>
-<th>UI表单</th>
-<th>表单用可搜索下拉框，可配置属性如多选，可在新窗口新增项等等。</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>[MasterDetailRelation(foreignKey: “…”, IncludeColumns=”…”)]</td>
-<td>UI表单</td>
-<td>主从关系，级联下拉框查询</td>
-</tr>
-<tr>
-<td>Updatable(false)</td>
-<td>UI表单</td>
-<td>只读不可更新</td>
-</tr>
-<tr>
-<td>Insertable(false)</td>
-<td>UI表单</td>
-<td>只读不可修改</td>
-</tr>
-<tr>
-<td>HideOnInsert</td>
-<td>UI表单</td>
-<td>新增时隐藏</td>
-</tr>
-<tr>
-<td>Trim/TrimToEmpty</td>
-<td>UI表单</td>
-<td>字串去空格，前者会变成null而后者为Empty</td>
-</tr>
-<tr>
-<td>ImageUploadEditor/ MultipleImageUploadEditor( FilenameFormat=”…”)</td>
-<td>UI表单</td>
-<td>图片上传，前者为单张，后者为多张</td>
-</tr>
-</tbody></table>
-<p><strong>代码生成器</strong> <strong>Sergen</strong> 使用步骤</p>
-<p>ViewàOther WindowsàPackage Manager Console</p>
-<p>在控制台中输入sergen启动</p>
-<p><img src="D:%5C%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0%E6%95%B0%E6%8D%AE%5Ca113729396@126.com%5Cfb33aa25c03d4a02abda1855dc58f898%5Cwps1.png" alt="img"></p>
-<p>选择Connection  String，即根目录下Web.Config中配置的连接字符串。选中对应业务的数据表。</p>
-<p>点击Generate Code for Checked Entities生成代码。VS会弹窗提示外部变更，选择覆盖。</p>
-<p>回到Solution Explorer（资源管理器）窗体中，点击Show  All  Files（显示全部）按钮，找到刚刚自动生成的代码，包含进项目。</p>
-<p>根据实际需要移动代码目录，增删代码文件，修改代码内容，编辑导航信息等等。</p>
-<p>ConnectionKey（连接字符串）设置为选定  web.config  配置文件中连接字符串的连接键。你通常不需要更改它，让其保持默认值。</p>
-<p>Entity  Identifier（实体名）这通常对应表名，但是有时候表名含有下划线或其他无效字符，所以需要你决定如何生成代码中的实体名称（一个有效的标识名称）。</p>
-<p>Permission Key（权限）对资源（页、服务等）的访问控制都是由简单字符串组成的访问许可键（permission keys）控制。这些权限被授予用户（users）或角色（roles）。我们的影片页面只有管理员用户（或者以后的内容编辑）可使用，因   此，现在让我们把它设为 Administration，默认情况下，在 Serene 模板中只有 admin 用户有这个权限。</p>
-<p><strong>·</strong> <strong>持久化设置</strong></p>
-<p>用于保存用户对网格列表的设置</p>
-<p>在ScriptInitialization.ts中开启默认持久化</p>
-<p>namespace Serene.ScriptInitialization { Q.Config.responsiveDialogs = true; Q.Config.rootNamespaces.push(‘Serene’);</p>
-<p>//在此添加如下</p>
-<p>Serenity.DataGrid.defaultPersistanceStorage = window.sessionStorage/ localStorage;</p>
-<p>}</p>
-<p>sessionStorage这将设置保存到浏览器的会话(session)。当任何浏览器窗口保持打开状态时，将数保存到一个键/值字</p>
-<p>典。当用户关闭所有浏览器窗口时，所有的设置都会丢失。localStorage使用浏览器本地存储。在浏览器重新启动之间将保留设置。</p>
-<p>教程中还有区分用户的持久化，分别持久化不同表格，更改持久化的目标属性，以及将持久化信息存储到数据库</p>
-<p>（UserPreferences表）。</p>
-<p>建议采用最后一种存储到数据库的方式，可在不同终端区分用户进行缓存。</p>
-<p>/// <reference path= "../Common/UserPreference/UserPreferenceStorage.ts" /> Serenity.DataGrid.defaultPersistanceStorage = new Common.UserPreferenceStorage(); 注意///引用语句应该放在文件头部，namespace之上。</p>
-<p><strong>·</strong> <strong>T4</strong> <strong>模板（**</strong>.tt文件）**</p>
-<p>Serene 包含一些 T4(.tt) 文件，可以将此类信息从服务器端（C# 中的 rows 等）转移到客户端 （TypeScript） 用于智能提示。</p>
-<p>运行这些模板之前，请确保你的解决方案能成功生成，以便模板可使用项目输出的DLL  文件（MovieTutorial.Web.dll） 生成代码。</p>
-<p>在生成解决方案之后，点击 生成 菜单，然后选择 转换所有模板。</p>
-<p><strong>·</strong> <strong>多国语言</strong></p>
-<p>本地字典，前端显示的翻译：</p>
-<p>文件位置 Scripts/site/texts文件夹中</p>
-<p>文件名命名应遵循 {前缀}.{LanguageID}.json</p>
-<p>行字段的本地文本唯一键由 “Db.” + (LocalTextPrefix for Row) + “.” + FieldName 组成。它们的值从字段的 [DisplayName] 特性生成，但也可能是另一种语言的翻译。</p>
-<p>LocalTextPrefix 默认情况下相当于 ModuleName + “.” + RowClassName ，但是可以在 Row 构造函数中修改。</p>
-<p>C#端文本字典，位置Modules/Texts.cs，对于非系统自动生成的自定义文本，需要在此登记。</p>
-<p>框架自带的文本翻译文字位于Scripts/serenity/texts文件夹中</p>
-<p>· 表格UI相关</p>
-<p>在实体Grid.ts中，可以进行如下操作增加/删除快速过滤器</p>
-<p>protected getQuickFilters() {</p>
-<p>var filters = super.getQuickFilters(); filters.removeAt/add/push/ splice (); return filters;</p>
-<p>}</p>
-<p>增加/删除按钮</p>
-<p>protected getButtons(){</p>
-<p>var buttons = super.getButtons(); buttons.removeAt/add/push/ splice (); return buttons;</p>
-<p>}</p>
-<p>增加/删除表格列</p>
-<p>protected getColumns() {</p>
-<p>var columns = super.getColumns(); columns.removeAt/add/push/ splice (); return columns;</p>
-<p>}</p>
-<p>相关样式，请到site.less中进行编码点击事件</p>
-<p>protected override void OnClick(jQueryEvent e, int row, int cell)</p>
-<p>{</p>
-<p>//检查点击事件是否被基本的网格类处理，防止同样事件被处理再次</p>
-<p>base.OnClick(e, row, cell); if (e.IsDefaultPrevented()) return;</p>
-<p>//获得点击行的实体 var item = Items[row];</p>
-<p>if (J(e.Target).HasClass(“inline-action”))</p>
-<p>{</p>
-<p>//阻止其默认行为</p>
-<p>e.PreventDefault();</p>
-<p>if (J(e.Target).HasClass(“delete-row”))</p>
-<p>{</p>
-<p>//执行删除操作</p>
-<p>}</p>
-<p>}</p>
-<p>}</p>
-<p>增加行选择列</p>
-<p>public class MyGrid : EntityGrid<MyRow></p>
-<p>{</p>
-<p>private GridRowSelectionMixin rowSelection;</p>
-<p>public MyGrid(jQueryObject container): base(container)</p>
-<p>{</p>
-<p>rowSelection = new GridRowSelectionMixin(this);</p>
-<p>}</p>
-<p>protected override List<SlickColumn> GetColumns()</p>
-<p>{</p>
-<p>var columns = base.GetColumns();</p>
-<p>columns.Insert(0, GridRowSelectionMixin.CreateSelectColumn(() =&gt; rowSelection)); return columns;</p>
-<p>}</p>
-<p>protected override List<ToolButton> GetButtons()</p>
-<p>{</p>
-<p>var buttons = base.GetButtons(); buttons.Add(new ToolButton</p>
-<p>{</p>
-<p>CssClass = “tag-button”,</p>
-<p>Title = “Do Something With Selected Rows”,</p>
-<p>OnClick = delegate</p>
-<p>{</p>
-<p>var selectedIDs = rowSelection.GetSelectedKeys()</p>
-<p>if (selectedIDs.Count == 0)</p>
-<p>Q.NotifyWarning(“Please select some rows”);</p>
-<p>}</p>
-<p>});</p>
-<p>else</p>
-<p>Q.NotifySuccess(“You have selected “ + selectedIDs.Count + “ row(s) with ID(s): “ + string.Join(“,”, selectedIDs));</p>
-<p>return buttons;</p>
-<p>}</p>
-<p>}</p>
-<p>SlickGrid 列的格式化器</p>
-<p>在实体Grid.ts旁新增Formatter.ts文件</p>
-<p>namespace MovieTutorial.MovieDB {</p>
-<p>@Serenity.Decorators.registerFormatter()</p>
-<p>export class GenreListFormatter implements Slick.Formatter {</p>
-<p>format(ctx: Slick.FormatterContext) {</p>
-<p>\TODO</p>
-<p>}</p>
-<p>}</p>
-<p>网址 <a href="https://serenity.is/" target="_blank" rel="noopener">https://serenity.is/</a></p>
-<p>Github <a href="https://github.com/volkanceylan/Serenity" target="_blank" rel="noopener">https://github.com/volkanceylan/Serenity</a></p>
-<p>手册 <a href="https://volkanceylan.gitbooks.io/serenity-zh-cn" target="_blank" rel="noopener">https://volkanceylan.gitbooks.io/serenity-zh-cn</a></p>
-
-      
+        <a  class=""
+           href="/SerenityMannual/2020/02/02/Serenity%E4%BB%8B%E7%BB%8D/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Serenity介绍">Serenity介绍</span>
+            <span class="post-date" title="2020-02-02 00:00:00">2020/02/02</span>
+        </a>
+        
+        <a  class=""
+           href="/SerenityMannual/2020/02/04/Dialog%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Dialog中的方法">Dialog中的方法</span>
+            <span class="post-date" title="2020-02-04 00:00:00">2020/02/04</span>
+        </a>
+        
+        <a  class=""
+           href="/SerenityMannual/2020/02/02/Grid%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Grid中的方法">Grid中的方法</span>
+            <span class="post-date" title="2020-02-02 10:32:38">2020/02/02</span>
+        </a>
+        
+        <a  class=""
+           href="/SerenityMannual/2020/02/02/Sergen%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Sergen代码生成器">Sergen代码生成器</span>
+            <span class="post-date" title="2020-02-02 00:00:00">2020/02/02</span>
+        </a>
+        
+        <a  class=""
+           href="/SerenityMannual/2020/02/02/%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="开发步骤">开发步骤</span>
+            <span class="post-date" title="2020-02-02 00:00:00">2020/02/02</span>
+        </a>
+        
+        <a  class=""
+           href="/SerenityMannual/2020/02/02/%E5%9C%A8Serenity%E4%B8%AD%E6%B7%BB%E5%8A%A0%E9%A1%B5%E7%AD%BE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="在Sernity中添加页签">在Sernity中添加页签</span>
+            <span class="post-date" title="2020-02-02 00:00:00">2020/02/02</span>
+        </a>
+        
+        <a  class=""
+           href="/SerenityMannual/2020/02/02/Jquery/%E6%97%A5%E6%9C%9F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="日期">日期</span>
+            <span class="post-date" title="2020-02-02 00:00:00">2020/02/02</span>
+        </a>
+        
+        <a  class=""
+           href="/SerenityMannual/2020/02/05/Serenity%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Serenity常用方法">Serenity常用方法</span>
+            <span class="post-date" title="2020-02-05 00:00:00">2020/02/05</span>
+        </a>
+        
+        <a  class=""
+           href="/SerenityMannual/2020/02/04/React/React/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="React">React</span>
+            <span class="post-date" title="2020-02-04 00:00:00">2020/02/04</span>
+        </a>
+        
+    </nav>
+</div>
     </div>
-    <footer class="article-footer">
-      <a data-url="https://nathan2020-0126.github.io/SerenityMannual/2020/02/02/Serenity%E4%BB%8B%E7%BB%8D/" data-id="ck648d6y200004ctp0g7rgvb0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Sergen代码生成器" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/SerenityMannual/2020/02/02/Sergen%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/" class="article-date">
-  <time datetime="2020-02-01T16:00:00.000Z" itemprop="datePublished">2020-02-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/SerenityMannual/2020/02/02/Sergen%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/">Sergen代码生成器</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>官方教程: <a href="https://serenity.is/docs/sergen/code_generator_sergen" target="_blank" rel="noopener">https://serenity.is/docs/sergen/code_generator_sergen</a></p>
-
-      
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="https://nathan2020-0126.github.io/SerenityMannual/2020/02/02/Sergen%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/" data-id="ck67uk6ag0003kotp12e1clgh" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-开发步骤" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/SerenityMannual/2020/02/02/%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4/" class="article-date">
-  <time datetime="2020-02-01T16:00:00.000Z" itemprop="datePublished">2020-02-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/SerenityMannual/2020/02/02/%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4/">开发步骤</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Entity的增删改查"><a href="#Entity的增删改查" class="headerlink" title="Entity的增删改查"></a>Entity的增删改查</h2><h4 id="1-创建数据库表"><a href="#1-创建数据库表" class="headerlink" title="1. 创建数据库表"></a>1. 创建数据库表</h4><h5 id="包含软删除的数据库表"><a href="#包含软删除的数据库表" class="headerlink" title="包含软删除的数据库表"></a>包含软删除的数据库表</h5><p>IsActive有三种值: -1删除 0 未激活 1 激活</p>
-<p><img src="/SerenityMannual/2020/02/02/%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4/image-20200215101013403.png" alt="image-20200215101013403"></p>
-<h5 id="包含创建更新的数据库表"><a href="#包含创建更新的数据库表" class="headerlink" title="包含创建更新的数据库表"></a>包含创建更新的数据库表</h5><p><img src="/SerenityMannual/2020/02/02/%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4/image-20200215101202217.png" alt="image-20200215101202217"></p>
-<h4 id="2-通过Sergen生成代码"><a href="#2-通过Sergen生成代码" class="headerlink" title="2 通过Sergen生成代码"></a>2 通过Sergen生成代码</h4><p>进入系统管理下的Sergen页面，通过界面操作生成代码</p>
-<p><img src="/SerenityMannual/2020/02/02/%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4/image-20200215101636482.png" alt="image-20200215101636482"></p>
-<h4 id="3-调整生成的代码"><a href="#3-调整生成的代码" class="headerlink" title="3 调整生成的代码"></a>3 调整生成的代码</h4><p>Sergen会根据我们的表结构，生成的Entity自动继承自不同的类 <strong>LoggingAllRow</strong>  <strong>LoggingRow</strong>，</p>
-<p>可能我的Sergen中的参数配置不正确，生成的Entity代码需要手动调整一行，参考下面图片</p>
-<p><img src="/SerenityMannual/2020/02/02/%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4/image-20200215102006950.png" alt="image-20200215102006950"></p>
-<h4 id="4-调整-Page和-CsHtml中的代码"><a href="#4-调整-Page和-CsHtml中的代码" class="headerlink" title="4 调整.Page和.CsHtml中的代码"></a>4 调整.Page和.CsHtml中的代码</h4><p>因为我们增加了页签的功能，下面两处的代码需要调整。</p>
-<p><strong>.Page中的修改</strong></p>
-<ol>
-<li>将返回值改为PartialView</li>
-</ol>
-<p><img src="/SerenityMannual/2020/02/02/%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4/image-20200215102121718.png" alt="image-20200215102121718"></p>
-<p><strong>.CsHtml中的修改</strong></p>
-<ol>
-<li><p>增加一层Div</p>
-</li>
-<li><p>修改GridDiv的Id值，确保和其他不重名</p>
-</li>
-</ol>
-<p><img src="/SerenityMannual/2020/02/02/%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4/image-20200215102152476.png" alt="image-20200215102152476"></p>
-<h3 id="配置软删除的特性-非必须"><a href="#配置软删除的特性-非必须" class="headerlink" title="配置软删除的特性 (非必须)"></a>配置软删除的特性 (非必须)</h3><ol>
-<li><h4 id="在仓储服务Repository增加取消删除的方法"><a href="#在仓储服务Repository增加取消删除的方法" class="headerlink" title="在仓储服务Repository增加取消删除的方法"></a>在仓储服务Repository增加取消删除的方法</h4></li>
-</ol>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">WorkcenterRepository</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> MyRow.RowFields fld &#123; <span class="keyword">get</span> &#123; <span class="keyword">return</span> MyRow.Fields; &#125; &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> SaveResponse <span class="title">Create</span>(<span class="params">IUnitOfWork uow, SaveRequest&lt;MyRow&gt; request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MySaveHandler().Process(uow, request, SaveRequestType.Create);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> SaveResponse <span class="title">Update</span>(<span class="params">IUnitOfWork uow, SaveRequest&lt;MyRow&gt; request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MySaveHandler().Process(uow, request, SaveRequestType.Update);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> DeleteResponse <span class="title">Delete</span>(<span class="params">IUnitOfWork uow, DeleteRequest request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MyDeleteHandler().Process(uow, request);</span><br><span class="line">        &#125;</span><br><span class="line">          <span class="comment">//复制下面 三行</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> UndeleteResponse <span class="title">Undelete</span>(<span class="params">IUnitOfWork uow, UndeleteRequest request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MyUndeleteHandler().Process(uow, request);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> RetrieveResponse&lt;MyRow&gt; <span class="title">Retrieve</span>(<span class="params">IDbConnection connection, RetrieveRequest request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MyRetrieveHandler().Process(connection, request);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> ListResponse&lt;MyRow&gt; <span class="title">List</span>(<span class="params">IDbConnection connection, ListRequest request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MyListHandler().Process(connection, request);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private class MySaveHandler : SaveRequestHandler&lt;MyRow&gt; &#123; &#125;</span><br><span class="line">        private class MyDeleteHandler : DeleteRequestHandler&lt;MyRow&gt; &#123; &#125;</span><br><span class="line">        <span class="comment">//复制下面 一行</span></span><br><span class="line">        private class MyUndeleteHandler : UndeleteRequestHandler&lt;MyRow&gt; &#123; &#125;</span><br><span class="line">        private class MyRetrieveHandler : RetrieveRequestHandler&lt;MyRow&gt; &#123; &#125;</span><br><span class="line">        private class MyListHandler : ListRequestHandler&lt;MyRow&gt; &#123; &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<ol start="2">
-<li><h4 id="在EndPoints里增加方法"><a href="#在EndPoints里增加方法" class="headerlink" title="在EndPoints里增加方法"></a>在EndPoints里增加方法</h4></li>
-</ol>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">WorkcenterController</span> : <span class="title">ServiceEndpoint</span></span><br><span class="line">    &#123;</span><br><span class="line">        [<span class="meta">HttpPost, AuthorizeCreate(typeof(MyRow))</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> SaveResponse <span class="title">Create</span>(<span class="params">IUnitOfWork uow, SaveRequest&lt;MyRow&gt; request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MyRepository().Create(uow, request);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        [<span class="meta">HttpPost, AuthorizeUpdate(typeof(MyRow))</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> SaveResponse <span class="title">Update</span>(<span class="params">IUnitOfWork uow, SaveRequest&lt;MyRow&gt; request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MyRepository().Update(uow, request);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        [<span class="meta">HttpPost, AuthorizeDelete(typeof(MyRow))</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> DeleteResponse <span class="title">Delete</span>(<span class="params">IUnitOfWork uow, DeleteRequest request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MyRepository().Delete(uow, request);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//复制下面的方法</span></span><br><span class="line">        [<span class="meta">HttpPost, AuthorizeDelete(typeof(MyRow))</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> UndeleteResponse <span class="title">Undelete</span>(<span class="params">IUnitOfWork uow, UndeleteRequest request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MyRepository().Undelete(uow, request);</span><br><span class="line">        &#125;</span><br><span class="line">        [<span class="meta">HttpPost</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> RetrieveResponse&lt;MyRow&gt; <span class="title">Retrieve</span>(<span class="params">IDbConnection connection, RetrieveRequest request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MyRepository().Retrieve(connection, request);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        [<span class="meta">HttpPost</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> ListResponse&lt;MyRow&gt; <span class="title">List</span>(<span class="params">IDbConnection connection, ListRequest request</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MyRepository().List(connection, request);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<ol start="3">
-<li><h4 id="在Dialog和Grid里增加方法，注意修改为自己的Row"><a href="#在Dialog和Grid里增加方法，注意修改为自己的Row" class="headerlink" title="在Dialog和Grid里增加方法，注意修改为自己的Row"></a>在Dialog和Grid里增加方法，注意修改为自己的Row</h4></li>
-</ol>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> getIsActiveProperty() &#123; <span class="keyword">return</span> WorkcenterRow.isActiveProperty; &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="业务逻辑的实现-服务"><a href="#业务逻辑的实现-服务" class="headerlink" title="业务逻辑的实现 - 服务"></a>业务逻辑的实现 - 服务</h2><p>通过上一步骤，我们已经有了Entity, Entity对应的仓储类方法，接下来我们要写代码实现业务逻辑。我们将实现某一个或某些业务逻辑的方法，称为服务。服务根据使用对象的不同，分为领域服务和应用服务。</p>
-<h3 id="应用服务"><a href="#应用服务" class="headerlink" title="应用服务"></a>应用服务</h3><p>应用服务都是继承自ServiceEndPoint</p>
-<p>DTO分为Request和Response, 分别继承自 ServiceRequest 和 ServiceResponse.</p>
-<p>重新编译项目会，系统会自动生成前端的TypeScript类。</p>
-<p>后端示例</p>
-<p><img src="/SerenityMannual/2020/02/02/%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4/image-20200215130017059.png" alt="image-20200215130017059"></p>
-<p>前端调用示例</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Quality.Services.InProcessInspectionService.GetInspRuleTaskAsMatrix(&#123;</span><br><span class="line">                ConfirmationId: ConfirmationId,</span><br><span class="line">                WorkcenterTaskId: WorkcenterTaskId</span><br><span class="line">            &#125;, <span class="function"><span class="params">r</span> =&gt;</span> &#123;</span><br><span class="line">          </span><br><span class="line">                <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">                    inspectionRulesTaskMatrix: r</span><br><span class="line">                &#125;);</span><br><span class="line">                    <span class="keyword">this</span>.checkInspectionStatus();</span><br><span class="line">            &#125;);</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://nathan2020-0126.github.io/SerenityMannual/2020/02/02/%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4/" data-id="ck67uk6ag0004kotp2i19cb3o" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-在Serenity中添加页签" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/SerenityMannual/2020/02/02/%E5%9C%A8Serenity%E4%B8%AD%E6%B7%BB%E5%8A%A0%E9%A1%B5%E7%AD%BE/" class="article-date">
-  <time datetime="2020-02-01T16:00:00.000Z" itemprop="datePublished">2020-02-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/SerenityMannual/2020/02/02/%E5%9C%A8Serenity%E4%B8%AD%E6%B7%BB%E5%8A%A0%E9%A1%B5%E7%AD%BE/">在Sernity中添加页签</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://nathan2020-0126.github.io/SerenityMannual/2020/02/02/%E5%9C%A8Serenity%E4%B8%AD%E6%B7%BB%E5%8A%A0%E9%A1%B5%E7%AD%BE/" data-id="ck67uk6ah0005kotpcd5ab1ch" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Jquery/日期" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/SerenityMannual/2020/02/02/Jquery/%E6%97%A5%E6%9C%9F/" class="article-date">
-  <time datetime="2020-02-01T16:00:00.000Z" itemprop="datePublished">2020-02-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/SerenityMannual/2020/02/02/Jquery/%E6%97%A5%E6%9C%9F/">日期</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="常用的日期操作"><a href="#常用的日期操作" class="headerlink" title="常用的日期操作"></a>常用的日期操作</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> today = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="comment">//获取当前年</span></span><br><span class="line"><span class="keyword">var</span> year=today.getFullYear();</span><br><span class="line"><span class="comment">//获取当前月</span></span><br><span class="line"><span class="keyword">var</span> month=today.getMonth()+<span class="number">1</span>;</span><br><span class="line"><span class="comment">//获取当前日</span></span><br><span class="line"><span class="keyword">var</span> date=today.getDate(); </span><br><span class="line"><span class="comment">//获取当前小时数(0-23)</span></span><br><span class="line"><span class="keyword">var</span> h=today.getHours();       </span><br><span class="line"><span class="comment">//获取当前分钟数(0-59)</span></span><br><span class="line"><span class="keyword">var</span> m=today.getMinutes();    </span><br><span class="line"><span class="keyword">var</span> s=today.getSeconds();  </span><br><span class="line"><span class="comment">//输出为yyyy-MM-hh格式的字符串</span></span><br><span class="line"><span class="keyword">var</span> orderDate = year+<span class="string">'-'</span>+month+<span class="string">"-"</span>+date;</span><br></pre></td></tr></table></figure>
-
-<h3 id="指定的日期加一天"><a href="#指定的日期加一天" class="headerlink" title="指定的日期加一天"></a>指定的日期加一天</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> addDate = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2019-10-31'</span>).getTime() + (<span class="number">1000</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span>));</span><br></pre></td></tr></table></figure>
-
-<h3 id="判断日期大小"><a href="#判断日期大小" class="headerlink" title="判断日期大小"></a>判断日期大小</h3>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://nathan2020-0126.github.io/SerenityMannual/2020/02/02/Jquery/%E6%97%A5%E6%9C%9F/" data-id="ck67uk6ao0006kotp4zil5tpx" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/SerenityMannual/archives/2020/02/">February 2020</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/SerenityMannual/2020/02/05/Serenity%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">Serenity常用方法</a>
-          </li>
-        
-          <li>
-            <a href="/SerenityMannual/2020/02/04/Dialog%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/">Dialog中的方法</a>
-          </li>
-        
-          <li>
-            <a href="/SerenityMannual/2020/02/04/React/React/">React</a>
-          </li>
-        
-          <li>
-            <a href="/SerenityMannual/2020/02/02/Grid%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/">Grid中的方法</a>
-          </li>
-        
-          <li>
-            <a href="/SerenityMannual/2020/02/02/Serenity%E4%BB%8B%E7%BB%8D/">Serenity介绍</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
 </aside>
+<div class="post index">
+    <div class="pjax">
+        <article class="index">
+            <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于叶落阁"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
+<blockquote>
+<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
+</blockquote>
+<blockquote>
+<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
+</blockquote>
+<blockquote>
+<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
+</blockquote>
+<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
+<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
+<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阿杰（杨玉杰）的个人站。</p>
+<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
+<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
+<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源</p>
+<p>主要功能：</p>
+<ul>
+<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
+<li>pad/手机等移动端适配</li>
+<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+</ul>
+
+        </article>
         
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        <p>
+            <a  class="dashang" onclick="dashangToggle()">赏</a>
+        </p>
+        
+        
     </div>
-  </div>
-</footer>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2020 Nathan</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/SerenityMannual/" class="mobile-nav-link">Home</a>
-  
-    <a href="/SerenityMannual/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/SerenityMannual/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/SerenityMannual/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/SerenityMannual/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/SerenityMannual/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': [],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
 
 
-  
-<link rel="stylesheet" href="/SerenityMannual/fancybox/jquery.fancybox.css">
+    /*引用块样式*/
+    
 
-  
-<script src="/SerenityMannual/fancybox/jquery.fancybox.pack.js"></script>
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/SerenityMannualhttps://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
 
 
 
 
-<script src="/SerenityMannual/js/script.js"></script>
 
 
 
-
-  </div>
-</body>
 </html>
