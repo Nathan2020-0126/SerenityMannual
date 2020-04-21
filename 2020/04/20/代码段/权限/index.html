@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Serenity开发实践 | Serenity</title>
+  <title>权限 | Serenity</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Serenity开发实践 | Serenity">
+  <meta name="description" content="权限 | Serenity">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Serenity框架开发手册">
 <meta property="og:type" content="website">
@@ -215,9 +215,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Serenity开发实践" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-代码段/权限" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Serenity开发实践</h1>
+        <h1 class="article-title">权限</h1>
     
     <div class="article-meta">
         
@@ -227,7 +227,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-04-20 19:03:50'>2020-02-22 00:00</time>
+        创建时间:<time class="date" title='更新时间: 2020-04-20 19:04:43'>2020-04-20 00:00</time>
         
     </div>
     <div class="article-meta">
@@ -249,7 +249,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#应用服务、领域服务和数据交互对象"><span class="toc-text">应用服务、领域服务和数据交互对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#为每一个流程建一个应用服务-领域服务和数据交互对象"><span class="toc-text">为每一个流程建一个应用服务,领域服务和数据交互对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何设计领域服务"><span class="toc-text">如何设计领域服务</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#NavigationPermission"><span class="toc-text">NavigationPermission</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -265,83 +265,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="应用服务、领域服务和数据交互对象"><a href="#应用服务、领域服务和数据交互对象" class="headerlink" title="应用服务、领域服务和数据交互对象"></a>应用服务、领域服务和数据交互对象</h2><p><strong>应用服务（Application Service）</strong>是暴露给前端或者其他系统调用的方法。应用服务之间最好不要互相调用；权限应定义在应用服务层之上。</p>
-<p><strong>领域服务(Domain Service)</strong>是用来实现业务逻辑，所以领域服务的代码量最多，也最重要。写代码者一定要完全理解业务流程，并能够抽象出业务流程的生命周期。</p>
-<p><strong>数据交互对象(Data Transfer Object)</strong>分为两种，一种是对外交互的数据，比如前端或者其他系统调用应用服务传递的数据(Application Service DTO)；一种是领域服务间互相调用或者应用服务调用领域服务时传递的数据对象(Domain Service DTO)。每一个应用服务都需要定义DTO, 不同的应用服务可以共享一个DTO. 领域服务可以对一些通用的对象，抽象成为DTO。</p>
-<h4 id="为每一个流程建一个应用服务-领域服务和数据交互对象"><a href="#为每一个流程建一个应用服务-领域服务和数据交互对象" class="headerlink" title="为每一个流程建一个应用服务,领域服务和数据交互对象"></a>为每一个流程建一个应用服务,领域服务和数据交互对象</h4><p>管理系统大部分都是由一个一个流程组成，为每一个流程建立一个文件夹，包含其所需的应用服务，领域服务和数据交互对象，这样代码结构清晰，方便理解和查找。下图中包含4个流程，4M变化点，生产任务执行，产线问题处理和QRAP流程。后缀为Dto的是数据交互对象，后缀为Repository是领域服务，后缀为Service的是应用服务。在有些流程，因为定义了较多的领域服务Dto, 所以我也将其专门放一个文件。</p>
-<p><img src="http://images.niki.life/image-20200312194036885.png" alt="image-20200312194036885"></p>
-<h4 id="如何设计领域服务"><a href="#如何设计领域服务" class="headerlink" title="如何设计领域服务"></a>如何设计领域服务</h4><p>再次强调，领域服务的设计非常重要。优秀的领域服务设计有下面两个特点：</p>
-<ol>
-<li>代码是复用的，一个业务逻辑必须在一处代码中实现；复用的代码可以使你的程序容易维护。</li>
-<li>逻辑是方便扩展的，管理系统的逻辑变更几乎是不可避免的，优秀的程序设计将只需要更改少量代码，即可实现添加或修改系统功能，而一个糟糕的程序设计，将使得变更几乎不可能；</li>
-</ol>
-<p>遵循以下几点可以设计出合理的领域服务：</p>
-<ol>
-<li><p>充分理解业务流程，绘制流程图</p>
-</li>
-<li><p>抽象出业务流程的生命周期，以生产问题处理流程为例，其生命周期可以为</p>
-<ul>
-<li>创建：产线工人填写问题</li>
-<li>提交：班组长查看、过滤</li>
-<li>通知：传递给对应的部门去处理</li>
-<li>解决：对应的部门解决问题</li>
-<li>确认：解决完之后由上报的人确认</li>
-<li>关闭：关闭问题</li>
-</ul>
-</li>
-<li><p>为每一个针对Entity的操作写一个独立的方法，可以使代码尽量复用。</p>
-<blockquote>
-<p>如果某几个针对Entity 的操作总是一起出现，逻辑上不可分离，应写在一个方法内，以免使方法太多，识别这些逻辑不可分离的Entity操作非常重要，通过绘制流程图可以帮助我们方便识别这些操作</p>
-</blockquote>
-</li>
-<li><p>方法的命名应该尽量简洁，比如Create, Submit, Cancel_Create, Cancel_Submit. 如果需要操作其他Entity, 可以命名为<em>{action}<em>{entity}, cancel</em>{action}_{entity}</em></p>
-</li>
-<li><p>将方法按照生命周期排放，并用#Region包裹起来</p>
-</li>
-</ol>
-<p><img src="http://images.niki.life/image-20200222185558091.png" alt="image-20200222185558091"></p>
-<ol start="6">
-<li><p>抽象一些通用的领域DTO</p>
-<p>抽象一些通用的领域DTO是必要的，否则有些领域服务的方法将需要传递非常多的参数，不容易编码也不容易扩展。比如提交质检结果，其内容包含有合格数量、报废数量、回用数量、返工数量、完工数量、移交数量、质检员、检验时间等8个属性，而且这8个属性总是同时被需要，这时我们可以将其设计为一个DTO，并且该DTO可以包含自己的逻辑。</p>
-</li>
-</ol>
-<pre><code class="C#">public class InspectionResultDto {
-        public Decimal? PassQty = 0;
-        public Decimal? ScrapQty = 0;
-        public Decimal? ReUseQty = 0;
-        public Decimal? ReWorkQty = 0;
-        public Datetime InpectionTime;
-        public Int32 InspectorUserId;
-        public Decimal TotalQty
-        {
-            get
-            {
-                return (Decimal)PassQty + (Decimal)ScrapQty + (Decimal)ReUseQty + (Decimal)ReWorkQty;
-            }
-        }
-        public Decimal HandOverQty {
-            get {
-                return (Decimal)PassQty + (Decimal)ReUseQty;
-            }
-        }
-
-    }</code></pre>
-<ol start="7">
-<li><p>领域服务设计图</p>
-<p>领域服务包含的代码最多，一个领域服务可能包含几十个方法。领域服务方法之间存在互相调用，逻辑复杂。所以通常需要几次的检查、重构，来保持设计的正确性。</p>
-<p>以下是领域服务的设计图，紫色方框代表一个实现的具体业务，其是一组基础领域方法的组合。比如生产订单的释放，包含一组动作，</p>
-<pre><code>- 检查是否满足释放条件
-- 创建释放记录
-- 反改生产订单释放数量
-- 创建该释放记录对应的工序计划任务
-- 查询首到工序
-- 判断工序是否自动释放
-- 释放工序（释放工序也是一个具体业务，包含几个基础领域方法）</code></pre><p>其中<code>创建释放记录</code>，<code>反改生产订单释放数量</code>，<code>创建对应的工序计划任务</code>总是一起出现，不可分割，可以写成一个方法。</p>
-<p>通过不断的对该图进行Review、调整来优化我们的领域服务设计。</p>
-<p><img src="http://images.niki.life/image-20200312203151338.png" alt="image-20200312203151338"></p>
-</li>
-</ol>
-
+        <h4 id="NavigationPermission"><a href="#NavigationPermission" class="headerlink" title="NavigationPermission"></a>NavigationPermission</h4>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
@@ -354,12 +278,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Serenity开发实践</p>
+    <p><span class="copy-title">文章标题:</span>权限</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="Nathan">Nathan</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-02-22, 00:00:00</p>
-    <p><span class="copy-title">最后更新:</span>2020-04-20, 19:03:50</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/" title="Serenity开发实践">https://nathan2020-0126.github.io/SerenityMannual/2020/02/22/Serenity%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/</a>
+    <p><span class="copy-title">发布时间:</span>2020-04-20, 00:00:00</p>
+    <p><span class="copy-title">最后更新:</span>2020-04-20, 19:04:43</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/SerenityMannual/2020/04/20/%E4%BB%A3%E7%A0%81%E6%AE%B5/%E6%9D%83%E9%99%90/" title="权限">https://nathan2020-0126.github.io/SerenityMannual/2020/04/20/%E4%BB%A3%E7%A0%81%E6%AE%B5/%E6%9D%83%E9%99%90/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
