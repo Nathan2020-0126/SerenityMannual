@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>什么是Serenity | Serenity</title>
+  <title>Serenity常用方法 | Serenity</title>
   <meta name="keywords" content="">
-  <meta name="description" content="什么是Serenity | Serenity">
+  <meta name="description" content="Serenity常用方法 | Serenity">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="ImageUploadEditor[MultipleImageUploadEditor(FilenameFormat &#x3D; &quot;ProdProblemRecord&#x2F;~&quot;,ThumbMode &#x3D; ImageScaleMode.PreserveRatioWithFill,ScaleMode &#x3D; ImageScaleMode.PreserveRatioNoFill,ScaleSmalle">
 <meta property="og:type" content="article">
@@ -249,9 +249,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-什么是Serenity" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-代码段/Serenity常用方法" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">什么是Serenity</h1>
+        <h1 class="article-title">Serenity常用方法</h1>
     
     <div class="article-meta">
         
@@ -261,7 +261,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-04-20 19:04:39'>2020-03-18 00:00</time>
+        创建时间:<time class="date" title='更新时间: 2020-04-21 09:41:21'>2020-02-05 00:00</time>
         
     </div>
     <div class="article-meta">
@@ -283,7 +283,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#什么是Serneity"><span class="toc-text">什么是Serneity</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么推荐Serenity"><span class="toc-text">为什么推荐Serenity</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#枚举"><span class="toc-text">枚举</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#枚举值显示名称"><span class="toc-text">枚举值显示名称</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lookup"><span class="toc-text">Lookup</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取Lookup，通过Id获取Lookup的Item"><span class="toc-text">获取Lookup，通过Id获取Lookup的Item</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单据流水号生成"><span class="toc-text">单据流水号生成</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据查询"><span class="toc-text">数据查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Json-和-类-转换"><span class="toc-text">Json 和 类 转换</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -299,39 +299,67 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="什么是Serneity"><a href="#什么是Serneity" class="headerlink" title="什么是Serneity"></a>什么是Serneity</h1><p>Serenity 是建立在开源技术上的.NET快速开发平台。</p>
-<p>它旨在使开发变得更简单，同时避免重复代码，减少花在重复任务的时间并提供最佳的软件设计实践，从而降低维护成本。</p>
-<p><strong>先来一张快照</strong></p>
-<p><img src="http://images.niki.life/20200319063113.png" alt></p>
-<h2 id="为什么推荐Serenity"><a href="#为什么推荐Serenity" class="headerlink" title="为什么推荐Serenity"></a>为什么推荐Serenity</h2><ol>
-<li><p>快速开发并且足够灵活</p>
-<p>通过代码生成器，可以帮助我们自动生成Entity，Service层，UI层等代码。1分钟搞定增删改查等基础功能，使开发人员可以聚焦在系统的复杂业务实现上，而不用花费时间在基础的CRUD功能上。</p>
-<p><strong>Serenity代码生成器</strong></p>
-<p><img src="http://images.niki.life/20200319063536.png" alt></p>
-<p><strong>Serenity代码生成结果</strong></p>
-<p><img src="http://images.niki.life/20200319064134.png" alt></p>
-</li>
-<li><p>活跃的社区以及齐全的文档</p>
-<p>Serenity目前是最火的.NET MVC框架，在Visiual Studio上有56万多次的下载，在Github上有将近2000个Star。 而且Github上的社区非常活跃，提的问题通常隔天就会有人回答。</p>
-<p>中文文档：<a href="https://volkanceylan.gitbooks.io/serenity-zh-cn" target="_blank" rel="noopener">https://volkanceylan.gitbooks.io/serenity-zh-cn</a></p>
-<p>Wiki：<a href="https://github.com/volkanceylan/Serenity/wiki" target="_blank" rel="noopener">https://github.com/volkanceylan/Serenity/wiki</a></p>
-</li>
-<li><p>丰富的示例，让开发没难度</p>
-<p>Demo链接：<a href="https://serenity.is/demo/" target="_blank" rel="noopener">https://serenity.is/demo/</a></p>
-<p>Demo里包含了各种常用的控件。</p>
-<ul>
-<li>好用到爆的表格控件</li>
-</ul>
-<p><img src="http://images.niki.life/20200319065056.png" alt></p>
-</li>
-</ol>
-<ul>
-<li><p>各种常用的表单控件</p>
-<p><img src="http://images.niki.life/20200319065202.png" alt></p>
-</li>
-</ul>
-<p>Github地址：<a href="https://github.com/volkanceylan/Serenity" target="_blank" rel="noopener">https://github.com/volkanceylan/Serenity</a></p>
-<p>官网地址：<a href="https://serenity.is/" target="_blank" rel="noopener">https://serenity.is/</a></p>
+        <h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><h4 id="枚举值显示名称"><a href="#枚举值显示名称" class="headerlink" title="枚举值显示名称"></a>枚举值显示名称</h4><pre><code class="typescript">//Serenity.EnumFormatter.format(枚举类型, data.LastInspectionRule.InspectionModel)
+Serenity.EnumFormatter.format(Quality.Enum.InspectionModel, data.LastInspectionRule.InspectionModel)</code></pre>
+<h2 id="Lookup"><a href="#Lookup" class="headerlink" title="Lookup"></a>Lookup</h2><h3 id="获取Lookup，通过Id获取Lookup的Item"><a href="#获取Lookup，通过Id获取Lookup的Item" class="headerlink" title="获取Lookup，通过Id获取Lookup的Item"></a>获取Lookup，通过Id获取Lookup的Item</h3><pre><code class="typescript">Mom.Production.ProductionProblemRow.getLookup().itemById[this.form.ParentProdProblemId.value]</code></pre>
+<h3 id="单据流水号生成"><a href="#单据流水号生成" class="headerlink" title="单据流水号生成"></a>单据流水号生成</h3><pre><code class="c#"> protected override void SetInternalFields()
+            {
+                base.SetInternalFields();
+                if (IsCreate) Row.WorkcenterTaskId = Row.WorkcenterTaskId ?? Guid.NewGuid();
+                GetNextNumberResponse nextNumber = GetNextNumberHelper.GetNextNumber(Connection, new GetNextNumberRequest
+                {
+                    Length = 12,
+                    Prefix = &quot;SC&quot; + DateTime.Today.Year.ToString() + DateTime.Today.Month.ToString(&quot;00&quot;) + DateTime.Today.Date.ToString(&quot;00&quot;)
+                }, fld.WorkcenterTaskCode); ;
+
+                Row.WorkcenterTaskCode = nextNumber.Serial;
+            }</code></pre>
+<h2 id="数据查询"><a href="#数据查询" class="headerlink" title="数据查询"></a>数据查询</h2><pre><code class="typescript">Production.ProductionProblemRecordService.List({
+                EqualityFilter: {
+                    &quot;WorkcenterTaskId&quot;: workcenterTaskId
+                },
+                IncludeColumns: [&quot;ProdProblemProdProblemName&quot;]
+            }, r =&gt; {
+                    this.setState({
+                        productionProblemRecords: r.Entities
+                    });
+            });</code></pre>
+<pre><code class="typescript">protected onViewSubmit() {
+            if (!super.onViewSubmit()) {
+                return false;
+            }
+            var request = this.view.params as Serenity.ListRequest;
+            request.Criteria = Serenity.Criteria.and(request.Criteria,
+                [[ProductionProblemRecordRow.Fields.ProdProblemProdProblemCategory], &#39;=&#39;, Production.Enum.ProductionProblemCategory.Quality]);
+            return true;
+        }</code></pre>
+<pre><code class="c#">ListResponse&lt;StorybookRow&gt; response = new StorybookRepository().List(connection, new ListRequest()
+                {
+                    IncludeColumns = new HashSet&lt;string&gt;() { &quot;LastUpdateTime&quot; },
+                    Sort = new SortBy[] { new SortBy(&quot;Id&quot;, true) },
+                    EqualityFilter = new Dictionary&lt;string, object&gt;() { { &quot;IsActive&quot;, 1 } },
+                    Criteria = new Criteria(&quot;RootId&quot;) == new Criteria(&quot;Id&quot;)
+                });</code></pre>
+<pre><code class="c#"> public Decimal Count(IDbConnection connection, FourMChangeFilterDto request)
+        {
+
+            var fld = FourMChangeRow.Fields;
+            request.dateRangeDto.EndDate = request.dateRangeDto.EndDate.Value.AddDays(1);
+
+            BaseCriteria criteria = fld.IsActive == 1;
+            criteria = criteria &amp;&amp; fld.InsertDate &gt;= (DateTime)request.dateRangeDto.StartDate &amp;&amp; fld.InsertDate &lt; (DateTime)request.dateRangeDto.EndDate;
+
+            if (request.FourMChangeKind != null)
+            {
+                criteria = criteria &amp;&amp; fld.FourMChangeKind == (Int16)request.FourMChangeKind;
+            }
+
+            Decimal count = connection.Count&lt;FourMChangeRow&gt;(criteria);
+            return count;
+        }</code></pre>
+<pre><code class="typescript"> EqualityFilter: {&quot;IsActive&quot;:1}</code></pre>
+<h2 id="Json-和-类-转换"><a href="#Json-和-类-转换" class="headerlink" title="Json 和 类 转换"></a>Json 和 类 转换</h2><pre><code class="C#">TestModel testModel = JsonConvert.DeserializeObject&lt;TestModel&gt;(jsonStr);
+object testModel = JsonConvert.DeserializeObject(jsonStr);</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
@@ -345,12 +373,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>什么是Serenity</p>
+    <p><span class="copy-title">文章标题:</span>Serenity常用方法</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="Nathan">Nathan</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-03-18, 00:00:00</p>
-    <p><span class="copy-title">最后更新:</span>2020-04-20, 19:04:39</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/SerenityMannual/2020/03/18/%E4%BB%80%E4%B9%88%E6%98%AFSerenity/" title="什么是Serenity">https://nathan2020-0126.github.io/SerenityMannual/2020/03/18/%E4%BB%80%E4%B9%88%E6%98%AFSerenity/</a>
+    <p><span class="copy-title">发布时间:</span>2020-02-05, 00:00:00</p>
+    <p><span class="copy-title">最后更新:</span>2020-04-21, 09:41:21</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/SerenityMannual/2020/02/05/%E4%BB%A3%E7%A0%81%E6%AE%B5/Serenity%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" title="Serenity常用方法">https://nathan2020-0126.github.io/SerenityMannual/2020/02/05/%E4%BB%A3%E7%A0%81%E6%AE%B5/Serenity%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
