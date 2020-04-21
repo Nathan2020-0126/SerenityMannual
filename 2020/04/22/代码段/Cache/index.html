@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>代码段/Entity(Row) | Serenity</title>
+  <title>缓存 | Serenity</title>
   <meta name="keywords" content="">
-  <meta name="description" content="代码段/Entity(Row) | Serenity">
+  <meta name="description" content="缓存 | Serenity">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="ImageUploadEditor[MultipleImageUploadEditor(FilenameFormat &#x3D; &quot;ProdProblemRecord&#x2F;~&quot;,ThumbMode &#x3D; ImageScaleMode.PreserveRatioWithFill,ScaleMode &#x3D; ImageScaleMode.PreserveRatioNoFill,ScaleSmalle">
 <meta property="og:type" content="article">
@@ -263,9 +263,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-代码段/Entity(Row)" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-代码段/Cache" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">代码段/Entity(Row)</h1>
+        <h1 class="article-title">缓存</h1>
     
     <div class="article-meta">
         
@@ -275,7 +275,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-04-22 05:53:04'>2020-02-22 00:00</time>
+        创建时间:<time class="date" title='更新时间: 2020-04-22 07:28:33'>2020-04-22 00:00</time>
         
     </div>
     <div class="article-meta">
@@ -297,7 +297,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#主外键关系"><span class="toc-text">主外键关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字段类型"><span class="toc-text">字段类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#JsonField"><span class="toc-text">JsonField</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ListField"><span class="toc-text">ListField</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Row-List"><span class="toc-text">Row List</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#格式"><span class="toc-text">格式</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -313,35 +313,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="主外键关系"><a href="#主外键关系" class="headerlink" title="主外键关系"></a>主外键关系</h2><ol>
-<li>加在Row上面</li>
-</ol>
-<pre><code class="C#"> [LeftJoin(&quot;cd&quot;, &quot;CustomerDetails&quot;, &quot;cd.[ID] = T0.[ID]&quot;, RowType = typeof(CustomerDetailsRow), TitlePrefix = &quot;&quot;)]</code></pre>
-<ol start="2">
-<li>加载Field上面</li>
-</ol>
-<pre><code class="c#"> [DisplayName(&quot;Task Flow&quot;), ForeignKey(&quot;[dbo].[Workflow_TaskFlow]&quot;, &quot;TaskFlowId&quot;), LeftJoin(&quot;jTaskFlow&quot;), TextualField(&quot;TaskFlowTaskFlowCode&quot;)]</code></pre>
-<h2 id="字段类型"><a href="#字段类型" class="headerlink" title="字段类型"></a>字段类型</h2><h4 id="JsonField"><a href="#JsonField" class="headerlink" title="JsonField"></a>JsonField</h4><p>added JsonField type. it has no attributes that controls serialization options like nulls so such options must be set through Field.Settings property if required for now.</p>
-<h4 id="ListField"><a href="#ListField" class="headerlink" title="ListField"></a>ListField<T></T></h4><pre><code class="c#">   [DisplayName(&quot;通知部门&quot;),FullWidth]
-        [LookupEditor(typeof(OrganizationRow),FilterField = &quot;IsQRAPRelated&quot;, FilterValue = true, Multiple = true), NotMapped]
-        [LinkingSetRelation(typeof(QrapInformOrganizationRow), &quot;QrapId&quot;, &quot;OrganizationId&quot;)]
-        [MinSelectLevel(SelectLevel.Details), QuickFilter(CssClass = &quot;hidden-xs&quot;)]
-        public List&lt;Int32&gt; InformOrganizationIds
-        {
-            get { return Fields.InformOrganizationIds[this]; }
-            set { Fields.InformOrganizationIds[this] = value; }
-        }</code></pre>
-<h4 id="Row-List"><a href="#Row-List" class="headerlink" title="Row List"></a>Row List</h4><pre><code class="c#">[DisplayName(&quot;工序序列&quot;), MasterDetailRelation(foreignKey: &quot;ProdOrderOperationId&quot;), NotMapped]
-        [ProdOrderOperationSequenceRowEditor]
-        public List&lt;ProdOrderOperationSequenceRow&gt; ProdOrderOperationSequences {
-            get { return Fields.ProdOrderOperationSequences[this]; }
-            set { Fields.ProdOrderOperationSequences[this] = value; }
-        }
+        <pre><code>return TwoLevelCache.Get&lt;string&gt;(
+                   cacheKey: &quot;GetIndicateValue_UnClosedProductionIssue&quot;,
+                   expiration: TimeSpan.FromMinutes(2),
+                   groupKey: ProductionProblemRecordRow.Fields.GenerationKey,
+                   loader: delegate {
+                       string value = connection.Count&lt;ProductionProblemRecordRow&gt;(fld.IsActive == 1
+                           &amp;&amp; fld.IsClosed ==0).ToString();
+                       return value;
+                   }
 
-----
-     public RowListField&lt;ProdOrderOperationSequenceRow&gt; ProdOrderOperationSequences;</code></pre>
-<h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><p>DisplayFormat(“#,##0.”)</p>
-
+               );</code></pre>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
@@ -354,12 +336,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>代码段/Entity(Row)</p>
+    <p><span class="copy-title">文章标题:</span>缓存</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="Nathan">Nathan</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-02-22, 00:00:00</p>
-    <p><span class="copy-title">最后更新:</span>2020-04-22, 05:53:04</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/SerenityMannual/2020/02/22/%E4%BB%A3%E7%A0%81%E6%AE%B5/Entity(Row)/" title="代码段/Entity(Row)">https://nathan2020-0126.github.io/SerenityMannual/2020/02/22/%E4%BB%A3%E7%A0%81%E6%AE%B5/Entity(Row)/</a>
+    <p><span class="copy-title">发布时间:</span>2020-04-22, 00:00:00</p>
+    <p><span class="copy-title">最后更新:</span>2020-04-22, 07:28:33</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/SerenityMannual/2020/04/22/%E4%BB%A3%E7%A0%81%E6%AE%B5/Cache/" title="缓存">https://nathan2020-0126.github.io/SerenityMannual/2020/04/22/%E4%BB%A3%E7%A0%81%E6%AE%B5/Cache/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
