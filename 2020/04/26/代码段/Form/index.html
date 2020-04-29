@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Grid中的方法 | Serenity</title>
+  <title>代码段/Form | Serenity</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Grid中的方法 | Serenity">
+  <meta name="description" content="代码段/Form | Serenity">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="提示信息 namespace Mom.Plan.Forms {     using Serenity.ComponentModel;     using System;     using System.ComponentModel.DataAnnotations.Schema;      [FormScript(&quot;Plan.ProdOrderItemReleaseSimulationP">
 <meta property="og:type" content="article">
@@ -273,9 +273,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-代码段/Grid中的方法" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-代码段/Form" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Grid中的方法</h1>
+        <h1 class="article-title">代码段/Form</h1>
     
     <div class="article-meta">
         
@@ -285,7 +285,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-04-27 13:50:00'>2020-03-13 00:00</time>
+        创建时间:<time class="date" title='更新时间: 2020-04-26 13:50:05'>2020-04-26 13:49</time>
         
     </div>
     <div class="article-meta">
@@ -307,7 +307,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#getButtons"><span class="toc-text">getButtons</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#增加，修改列"><span class="toc-text">增加，修改列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#去除Title"><span class="toc-text">去除Title</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EditItem"><span class="toc-text">EditItem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#onViewSubmit"><span class="toc-text">onViewSubmit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更新Dialog后自动刷新Grid"><span class="toc-text">更新Dialog后自动刷新Grid</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Grid-Onclick"><span class="toc-text">Grid Onclick</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SlickOption"><span class="toc-text">SlickOption</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Grid-Row-details"><span class="toc-text">Grid Row details</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#获取选择行"><span class="toc-text">获取选择行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#属性变更刷新"><span class="toc-text">属性变更刷新</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#List查询"><span class="toc-text">List查询</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#提示信息"><span class="toc-text">提示信息</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -323,233 +323,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="getButtons"><a href="#getButtons" class="headerlink" title="getButtons"></a>getButtons</h3><pre><code class="typescript">protected getButtons(): Serenity.ToolButton[] {
-    var buttons = super.getButtons();
-    buttons[Q.indexOf(buttons, x =&gt; x.cssClass == &quot;add-button&quot;)].title = &quot;Insert SalesOrder into monthly Plan&quot;;
+        <h4 id="提示信息"><a href="#提示信息" class="headerlink" title="提示信息"></a>提示信息</h4><pre><code>
+namespace Mom.Plan.Forms
+{
+    using Serenity.ComponentModel;
+    using System;
+    using System.ComponentModel.DataAnnotations.Schema;
 
-    //移除新增按钮
-    buttons.splice(Q.indexOf(buttons, x =&gt; x.cssClass == &quot;add-button&quot;), 1);
-    buttons.push({
-        title: &#39;Save Changes&#39;,
-        cssClass: &#39;apply-changes-button disabled&#39;,
-        onClick: e =&gt; this.saveClick(),
-        separator: true
-    });
-    return buttons;
-}</code></pre>
-<h3 id="增加，修改列"><a href="#增加，修改列" class="headerlink" title="增加，修改列"></a>增加，修改列</h3><pre><code class="c#">protected getColumns() {
-            var columns = super.getColumns();
-
-            columns.splice(1, 0, {
-                field: &#39;Print Invoice&#39;,
-                name: &#39;&#39;,
-                format: ctx =&gt; &#39;&lt;a class=&quot;inline-action print-invoice&quot; title=&quot;invoice&quot;&gt;&#39; +
-                    &#39;&lt;i class=&quot;fa fa-file-pdf-o text-red&quot;&gt;&lt;/i&gt;&lt;/a&gt;&#39;,
-                width: 24,
-                minWidth: 24,
-                maxWidth: 24
-            });
-
-            Q.first(columns, x =&gt; x.field === &#39;QuantityPerUnit&#39;).format = str;
-
-            return columns;
-        }
+    [FormScript(&quot;Plan.ProdOrderItemReleaseSimulationPanelOperationForm&quot;)]
+    [BasedOnRow(typeof(Entities.ProdOrderItemReleaseSimulationOperationRow), CheckNames = true)]
+    public class ProdOrderItemReleaseSimulationPanelOperationForm
+    {
+        [StaticTextBlock(HideLabel = true, IsHtml = true, Text = &quot;&lt;h4 class=&#39;text-blue&#39;&gt;调整设备数量&lt;/h4&gt;&quot; +
+            &quot;&lt;p&gt;调整设备数量以模拟将任务分配到多个设备上时，任务的预计完工时间和设备的估计产能负荷&lt;/p&gt;&quot; )]
+        [IgnoreName]
+        public string WelcomeMessage { get; set; }
+        public Int32 SimulationMachineCount { get; set; }
 
 
-private stringInputFormatter(ctx) {
-            var klass = &#39;edit string&#39;;
-            var item = ctx.item as ProductRow;
-            var pending = this.pendingChanges[item.ProductID];
-            var column = ctx.column as Slick.Column;
+       [StaticTextBlock(HideLabel = true, IsHtml = true, IsLocalText = false, Text = &quot;&lt;label class=\&quot;caption\&quot;&gt;&lt;/label&gt;&lt;span class=\&quot;text-muted\&quot;&gt;超出处理权限，请选择评审部门&lt;/span&gt;&quot;)]
+        [NotMapped, IgnoreName]
+        public String StaticTextForProdProblemRecordRelateApproveres { get; set; }
 
-            if (pending &amp;&amp; pending[column.field] !== undefined) {
-                klass += &#39; dirty&#39;;
-            }
-
-            var value = this.getEffectiveValue(item, column.field) as string;
-
-            return &quot;&lt;input type=&#39;text&#39; class=&#39;&quot; + klass +
-                &quot;&#39; data-field=&#39;&quot; + column.field +
-                &quot;&#39; value=&#39;&quot; + Q.attrEncode(value) + 
-                &quot;&#39; maxlength=&#39;&quot; + column.sourceItem.maxLength + &quot;&#39;/&gt;&quot;;
-        }</code></pre>
-<h3 id="去除Title"><a href="#去除Title" class="headerlink" title="去除Title"></a>去除Title</h3><pre><code class="typescript"> constructor(container: JQuery) {
-            super(container);
-            this.setTitle(&quot;&quot;);
-        }
-//或者下面这个方法
-protected getInitialTitle() {
-            return null;
-        }</code></pre>
-<h3 id="EditItem"><a href="#EditItem" class="headerlink" title="EditItem"></a>EditItem</h3><pre><code class="typescript"> /**
-         * This method is called for columns with [EditLink] attribute,
-         * but only for edit links of this grid&#39;s own item type.
-         * It is also called by Add Product button with a NULL entityOrId
-         * parameter so we should check that entityOrId is a string
-         * to be sure it is originating from a link.
-         *
-         * As we changed format for other columns, this will only be called
-         * for links in remaining OrderID column
-         */
-        protected editItem(entityOrId) {
-            // check that this is an edit link click, not add button, ID is always a string
-            if (typeof entityOrId == &quot;string&quot;) {
-                // convert ID to an integer, and find order with that ID
-                var item = this.view.getItemById(Q.toId(entityOrId));
-                // date is a ISO string, so need to parse it first
-                var date = Q.formatDate(item.OrderDate);
-
-                // ask for confirmation
-                Q.confirm(Q.format(&quot;You clicked edit link for order with ID: {0} and Date: {1}. Should i open that order?&quot;,
-                    item.OrderID, date), () =&gt; {
-                        new Northwind.OrderDialog().loadByIdAndOpenDialog(item.OrderID);
-                    });
-            }
-            else {
-                super.editItem(entityOrId);
-            }
-        }
-
-
-</code></pre>
-<h3 id="onViewSubmit"><a href="#onViewSubmit" class="headerlink" title="onViewSubmit"></a>onViewSubmit</h3><pre><code class="typescript">protected onViewSubmit() {
-    if (!super.onViewSubmit()) {
-        return false;
     }
-    var request = this.view.params as Serenity.ListRequest;
-    request.Criteria = Serenity.Criteria.and(request.Criteria,
-                [[SalesMilestoneTaskStepRow.Fields.ReponsiblePersonUsername], &#39;=&#39;, Q.Authorization.username], [&#39;is null&#39;, [SalesMilestoneTaskStepRow.Fields.ActualEndDate], [&#39;is not null&#39;, [SalesMilestoneTaskStepRow.Fields.ActualStartDate]]);
-    request.IncludeColumns.push(&quot;CurrentMilestoneTaskRespPersonUserId&quot;);
-
-     request.Criteria = Serenity.Criteria.and(request.Criteria,
-                    [[Stock.StockRow.Fields.StockId], &#39;not in&#39;, [this.options.hideEntityIds]])
-
-    return true;
-}
-
- protected onViewSubmit() {
-            if (!super.onViewSubmit()) {
-                return false;
-            }
-            var request = this.view.params as Serenity.ListRequest;
-
-            let criteria = Serenity.Criteria.or([[ProdOrderItemBomRow.Fields.IsStockPrepared], &#39;=&#39;, true], [[ProdOrderItemBomRow.Fields.IsAgreed], &#39;=&#39;, false]);
-            request.Criteria = Serenity.Criteria.and(request.Criteria,criteria);
-
-            return true;
-        }</code></pre>
-<h3 id="更新Dialog后自动刷新Grid"><a href="#更新Dialog后自动刷新Grid" class="headerlink" title="更新Dialog后自动刷新Grid"></a>更新Dialog后自动刷新Grid</h3><pre><code class="typescript">let dlg = new FourMChangeApproveDialog();
-    dlg.loadByIdAndOpenDialog(id);
-    Serenity.SubDialogHelper.bindToDataChange(dlg, this, (e, dci) =&gt; {
-        this.refresh();
-    }, true);
-
-
-dialog.element.on(&#39;dialogclose&#39;, () =&gt; {
-                        this.refresh();
-                        dialog = null;
-                    });</code></pre>
-<h3 id="Grid-Onclick"><a href="#Grid-Onclick" class="headerlink" title="Grid Onclick"></a>Grid Onclick</h3><pre><code class="typescript">protected onClick(e: JQueryEventObject, row: number, cell: number) {
-            super.onClick(e, row, cell);
-
-            if (e.isDefaultPrevented())
-                return;
-
-            var item = this.itemAt(row);
-            var target = $(e.target);
-
-            // if user clicks &quot;i&quot; element, e.g. icon
-            if (target.parent().hasClass(&#39;inline-action&#39;))
-                target = target.parent();
-
-            if (target.hasClass(&#39;inline-action&#39;)) {
-                e.preventDefault();
-
-                if (target.hasClass(&#39;FourMChangeApproves&#39;)) {
-                    let id = target.attr(&quot;data-id&quot;);
-
-                    if (id == undefined) { return }
-                    let entity: FourMChangeApproveRow
-                    Production.FourMChangeApproveService.Retrieve({
-                        EntityId: id
-                    }, r =&gt; {
-                        entity = r.Entity;
-                    }, { async: false });
-                    if (entity.IsApproved == false) {
-                        Q.confirm(&quot;当前未授权，确认要授权吗？&quot;, () =&gt; {
-
-                            Production.Services.FourMChangeCheckService.Approve({
-                                FourMChangeApproveId: id
-                            }, r =&gt; {
-                                this.refresh();
-                            });
-                        });
-                    } else {
-                        Q.confirm(&quot;当前已授权，确认要取消授权吗？&quot;, () =&gt; {
-
-                            Production.Services.FourMChangeCheckService.CancelApprove({
-                                FourMChangeApproveId: id
-                            }, r =&gt; {
-                                this.refresh();
-                            });
-                        });
-                    }
-
-
-
-                }
-            }
-        }</code></pre>
-<h3 id="SlickOption"><a href="#SlickOption" class="headerlink" title="SlickOption"></a>SlickOption</h3><pre><code class="typescript">protected getSlickOptions() {
-            let opt = super.getSlickOptions();
-            opt.enableTextSelectionOnCells = true;
-            return opt;
-        }</code></pre>
-<h3 id="Grid-Row-details"><a href="#Grid-Row-details" class="headerlink" title="Grid Row details"></a>Grid Row details</h3><p><a href="https://github.com/volkanceylan/Serenity/issues/4868" target="_blank" rel="noopener">https://github.com/volkanceylan/Serenity/issues/4868</a></p>
-<h4 id="获取选择行"><a href="#获取选择行" class="headerlink" title="获取选择行"></a>获取选择行</h4><pre><code class="typescript">        public getSelectedItems(): ProdOrderItemReserveRow[] {
-            let selectedKeys = this.rowSelection.getSelectedKeys();
-            if (selectedKeys != null &amp;&amp; selectedKeys.length &gt; 0) {
-                return selectedKeys.map(x =&gt; this.getView().getItemById(x));
-            }
-            return [] as ProdOrderItemReserveRow[];
-        }</code></pre>
-<h4 id="属性变更刷新"><a href="#属性变更刷新" class="headerlink" title="属性变更刷新"></a>属性变更刷新</h4><pre><code class="typescript"> protected getGridCanLoad() {
-            return super.getGridCanLoad() &amp;&amp; !!this.customerID;
-        }
-
-        private _customerID: string;
-
-        get customerID() {
-            return this._customerID;
-        }
-
-        set customerID(value: string) {
-            if (this._customerID !== value) {
-                this._customerID = value;
-                this.setEquality(&#39;CustomerID&#39;, value);
-                this.refresh();
-            }
-        }</code></pre>
-<h4 id="List查询"><a href="#List查询" class="headerlink" title="List查询"></a>List查询</h4><pre><code> private openRoutingLText(e: JQueryEventObject) {
-            var cell = this.slickGrid.getCellFromEvent(e);
-            var item = this.itemAt(cell.row);
-            let fld = Plan.RoutingLtextContentRow.Fields;
-            var myListRequest: Serenity.ListRequest = {};
-            myListRequest.Criteria = Serenity.Criteria.and(myListRequest.Criteria,
-                [[fld.ProdOrder], &#39;=&#39;, item.Productorder], [[fld.Operation], &#39;=&#39;, item.Operact]);
-            Serene7.Plan.RoutingLtextContentService.List(myListRequest, response =&gt; {
-                console.log(response);
-                var htmlstr = &quot;&quot;;
-                htmlstr += &#39;&lt;table class=&quot;table&quot;&gt;&lt;tbody&gt;&#39;;              
-                for (let i = 0; i &lt; response.Entities.length; i++) {
-                    htmlstr += &#39;&lt;tr&gt;&#39;;
-                    htmlstr += &#39;&lt;td&gt;&#39; + response.Entities[i].No + &#39;&lt;/td&gt;&#39;;
-                    htmlstr += &#39;&lt;td&gt;&#39; + response.Entities[i].Ltext + &#39;&lt;/td&gt;&#39;;
-                    htmlstr += &#39;&lt;/tr&gt;&#39;;
-                }
-                htmlstr += &#39;&lt;/table&gt;&lt;/tbody&gt;&#39;;      
-            })
-        }</code></pre>
+}</code></pre>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
@@ -562,12 +359,12 @@ dialog.element.on(&#39;dialogclose&#39;, () =&gt; {
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Grid中的方法</p>
+    <p><span class="copy-title">文章标题:</span>代码段/Form</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="Nathan">Nathan</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-03-13, 00:00:00</p>
-    <p><span class="copy-title">最后更新:</span>2020-04-27, 13:50:00</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/SerenityMannual/2020/03/13/%E4%BB%A3%E7%A0%81%E6%AE%B5/Grid%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/" title="Grid中的方法">https://nathan2020-0126.github.io/SerenityMannual/2020/03/13/%E4%BB%A3%E7%A0%81%E6%AE%B5/Grid%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/</a>
+    <p><span class="copy-title">发布时间:</span>2020-04-26, 13:49:09</p>
+    <p><span class="copy-title">最后更新:</span>2020-04-26, 13:50:05</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/SerenityMannual/2020/04/26/%E4%BB%A3%E7%A0%81%E6%AE%B5/Form/" title="代码段/Form">https://nathan2020-0126.github.io/SerenityMannual/2020/04/26/%E4%BB%A3%E7%A0%81%E6%AE%B5/Form/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
